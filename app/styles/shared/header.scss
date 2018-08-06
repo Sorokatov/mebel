@@ -1,0 +1,87 @@
+.header {
+
+    &__container {
+        position: relative;
+        padding: 13px 0 30px;
+        @include row(space-between);
+    }
+
+    &__nav {
+
+        &-contacts {
+            @include row(flex-start, center);
+            margin-bottom: 40px;
+
+            .link + .link {
+                margin-left: 52px;
+            }
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        top: 13px;
+        left: 50%;
+        width: 168px;
+        height: 88px;
+        @include bg-image("logo.svg");
+        transform: translateX(-50%);
+    }
+
+    &__contacts {
+        max-width: 457px;
+        @include column();
+
+        &-row {
+            @include inline-row();
+        }
+
+        &-column {
+            @include column();
+
+            & + & {
+                margin-left: 50px;
+            }
+        }
+
+        &-schedule {
+            margin-top: 5px;
+            font-size: 13px;
+            color: $orange;
+        }
+    }
+
+    &__lang {
+        align-self: flex-end;
+        line-height: 1;
+
+        .link + .link {
+            margin-left: 25px;
+        }
+    }
+
+    &__city {
+        margin-bottom: 6px;
+    }
+
+    &__categories {
+        padding: 30px 0;
+        background-color: $color-text;
+
+        &-container {
+            @include row(space-between);
+        }
+
+        &-link {
+            color: $orange;
+            @include roboto-bold;
+            text-transform: uppercase;
+            font-size: 17px;
+            transition: $transition-time color;
+
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+}

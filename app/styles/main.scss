@@ -4,3 +4,12 @@
 @import "_vars";
 @import "default";
 @import "fonts";
+
+// Shared imports
+
+@import "shared/header";
+@import "shared/link";
+
+// Components imports
+
+@import "components/showcase";

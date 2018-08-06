@@ -1,0 +1,22 @@
+.showcase {
+    min-height: 40vw;
+    padding-top: 130px;
+
+    &__title {
+        @include column;
+        max-width: 480px;
+        margin: 0 auto;
+        color: $white;
+        text-transform: uppercase;
+        text-align: center;
+        @include roboto-bold;
+        font-size: 93px;
+        line-height: 1.2;
+
+        &-small {
+            text-transform: none;
+            font-size: 37px;
+            line-height: 1.5;
+        }
+    }
+}

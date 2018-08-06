@@ -1,4 +1,32 @@
+@mixin roboto-bold() {
+    font-family: RobotoSlab;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@mixin calibri-regular() {
+    font-family: Calibri;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin calibri-light() {
+    font-family: Calibri;
+    font-weight: lighter;
+    font-style: normal;
+}
+
 // Layout
+
+@mixin inline-row($justify: '', $align: '') {
+    display: inline-flex;
+    @if $justify != '' {
+        justify-content: $justify;
+    }
+    @if $align != '' {
+        align-items: $align;
+    }
+}
 
 @mixin row($justify: '', $align: '') {
     display: flex;

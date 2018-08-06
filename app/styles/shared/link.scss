@@ -1,0 +1,48 @@
+.link {
+    @include inline-row(flex-start, center);
+    transition: $transition-time color;
+    color: $color-text;
+
+    & + & {
+        margin-left: 35px;
+    }
+
+    &__icon {
+        display: inline-block;
+        margin-right: 10px;
+
+        &._phone {
+            width: 19px;
+            height: 19px;
+            @include bg-image("icons/phone-orange.png");
+        }
+
+        &._msg {
+            width: 17px;
+            height: 17px;
+            @include bg-image("icons/msg-orange.png");
+        }
+    }
+
+    &:hover {
+        color: $orange;
+    }
+
+    &._color-orange {
+        @include calibri-regular;
+        color: $orange;
+    }
+
+    &._color-orange &__text {
+        display: inline-block;
+        border-bottom: 1px dashed $orange;
+    }
+
+    &._color-orange:hover &__text {
+        border-bottom: 1px dashed transparent;
+    }
+
+    &._font-sm {
+        font-size: 16px;
+    }
+}
