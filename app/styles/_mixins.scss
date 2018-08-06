@@ -1,0 +1,28 @@
+// Layout
+
+@mixin row($justify: '', $align: '') {
+    display: flex;
+    @if $justify != '' {
+        justify-content: $justify;
+    }
+    @if $align != '' {
+        align-items: $align;
+    }
+}
+
+@mixin column($align: '', $justify: '') {
+    display: flex;
+    flex-direction: column;
+    @if $justify != '' {
+        justify-content: $justify;
+    }
+    @if $align != '' {
+        align-items: $align;
+    }
+}
+
+// Images
+
+@mixin bg-image($path) {
+    background-image: url("../images/#{$path}");
+}
