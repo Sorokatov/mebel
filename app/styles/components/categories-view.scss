@@ -1,0 +1,106 @@
+.categories-view {
+    padding: 60px 0;
+
+    &__container {
+        @include column(center);
+    }
+
+    &__title {
+        margin-bottom: 55px;
+        text-align: center;
+    }
+
+    &__description {
+        margin-bottom: 80px;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    &__content {
+        margin-bottom: 30px;
+        @include row();
+        width: 100%;
+        padding: 0 100px 0 45px;
+
+        &-img {
+            width: 410px;
+            height: 410px;
+            margin-top: 20px;
+        }
+
+        &-text {
+            position: relative;
+            margin-left: 10px;
+            padding-top: 60px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -90px;
+                width: 380px;
+                height: 380px;
+                @include bg-image('category-border.png');
+                pointer-events: none;
+                z-index: 1;
+            }
+        }
+
+        &-title {
+            margin-bottom: 25px;
+            @include roboto-bold;
+            font-size: 48px;
+            color: $skyblue;
+        }
+
+        &-desc {
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        &-links {
+            @include column();
+            margin-bottom: 30px;
+
+            .link + .link {
+                margin-top: 5px;
+            }
+        }
+
+        &-button {
+            margin-left: 105px;
+        }
+    }
+
+    &__controls {
+        @include row(space-between);
+        width: 100%;
+        padding: 0 35px;
+
+        &-link {
+            padding: 11px 17px 9px;
+            @include calibri-bold;
+            text-transform: uppercase;
+            font-size: 17px;
+            line-height: 1;
+
+            &._active {
+                position: relative;
+                background-color: $color-text;
+                color: $white;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -6px;
+                    left: 50%;
+                    display: inline-block;
+                    width: 11px;
+                    height: 11px;
+                    background-color: $color-text;
+                    transform: translateX(-50%) rotate(45deg);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.title {
+    display: inline-block;
+    @include roboto-bold;
+    font-size: 40px;
+    line-height: 1.2;
+    color: $color-text;
+
+    &._color-white {
+        color: $white;
+    }
+}

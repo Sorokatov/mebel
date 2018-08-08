@@ -1,0 +1,52 @@
+.most-popular {
+    padding: 60px 0;
+
+    &__container {
+        @include column(center);
+    }
+
+    &__title {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    &__label {
+        position: relative;
+        margin-bottom: 55px;
+        padding: 10px 18px;
+        @include caveat-regular;
+        font-size: 28px;
+        line-height: 1;
+        color: $white;
+        background-color: $orange-bright;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            width: 30px;
+            height: 49px;
+            @include bg-image("label-backdrop.png");
+            z-index: -1;
+        }
+
+        &:before {
+            left: -21px;
+        }
+
+        &:after {
+            right: -21px;
+            transform: scale(-1, 1);
+        }
+    }
+
+    &__items {
+        @include row();
+        width: 100%;
+
+        .product {
+            width: 25%;
+        }
+    }
+}

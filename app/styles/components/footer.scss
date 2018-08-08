@@ -1,0 +1,28 @@
+.footer {
+    padding: 65px 0 40px;
+    background-color: $brown;
+
+    &__container {
+        width: 100%;
+        @include column(center);
+    }
+
+    &__socials {
+        @include row(space-between, center);
+        width: 275px;
+        margin-bottom: 55px;
+
+        &-link:hover &-icon {
+            fill: $white
+        }
+
+        &-icon {
+            fill: $color-text;
+            transition: $transition-time fill;
+        }
+    }
+
+    &__copyright {
+        color: $orange-very-dim;
+    }
+}

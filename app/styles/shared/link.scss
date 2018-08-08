@@ -3,10 +3,6 @@
     transition: $transition-time color;
     color: $color-text;
 
-    & + & {
-        margin-left: 35px;
-    }
-
     &__icon {
         display: inline-block;
         margin-right: 10px;
@@ -40,6 +36,14 @@
 
     &._color-orange:hover &__text {
         border-bottom: 1px dashed transparent;
+    }
+
+    &._color-sky {
+        color: $skyblue;
+
+        &:hover {
+            color: $skyblue - 50;
+        }
     }
 
     &._font-sm {

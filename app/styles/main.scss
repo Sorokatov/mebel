@@ -5,11 +5,25 @@
 @import "default";
 @import "fonts";
 
+// Partials imports
+
+@import "partials/owl-carousel";
+@import "partials/slick";
+
 // Shared imports
 
-@import "shared/header";
+@import "shared/button";
+@import "shared/input";
 @import "shared/link";
+@import "shared/title";
 
 // Components imports
 
+@import "components/categories-view";
+@import "components/contact-us";
+@import "components/footer";
+@import "components/header";
+@import "components/most-popular";
+@import "components/news";
+@import "components/price";
 @import "components/showcase";

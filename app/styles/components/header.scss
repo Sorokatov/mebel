@@ -8,6 +8,10 @@
 
     &__nav {
 
+        .link + .link {
+            margin-left: 35px;
+        }
+
         &-contacts {
             @include row(flex-start, center);
             margin-bottom: 40px;

@@ -1,0 +1,25 @@
+.button {
+    display: inline-block;
+    min-width: 185px;
+    padding: 13px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 17px;
+    @include calibri-bold;
+    color: $white;
+    background-color: $orange-bright;
+    transition: $transition-time all;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $red;
+    }
+
+    &._color-sky {
+        background-color: $skyblue;
+
+        &:hover {
+            background-color: $skyblue - 50;
+        }
+    }
+}

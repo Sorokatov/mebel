@@ -4,6 +4,24 @@
     font-style: normal;
 }
 
+@mixin roboto-regular() {
+    font-family: RobotoSlab;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin caveat-regular() {
+    font-family: Caveat;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin calibri-bold() {
+    font-family: Calibri;
+    font-weight: bold;
+    font-style: normal;
+}
+
 @mixin calibri-regular() {
     font-family: Calibri;
     font-weight: normal;

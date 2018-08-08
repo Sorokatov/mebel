@@ -1,0 +1,151 @@
+.contact-us {
+    padding: 60px 0;
+    background-color: $color-text;
+    color: $orange;
+
+    &__container {
+        @include row(space-between);
+    }
+
+    &__title {
+        margin-bottom: 35px;
+    }
+
+    &__socials {
+        width: 442px;
+
+        &-recall {
+            @include row(space-between);
+            margin: 28px 0 80px;
+
+            .input {
+                width: 245px;
+            }
+        }
+
+        &-block {
+            width: 100%;
+            @include row(space-between);
+            margin-top: 50px;
+        }
+
+        &-item {
+            @include column(center);
+            max-width: 78px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        &-icon {
+            display: inline-block;
+            width: 38px;
+            height: 34px;
+            margin-bottom: 20px;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            &._viber {
+                @include bg-image("icons/viber-orange.png");
+            }
+
+            &._telegram {
+                @include bg-image("icons/telegram-orange.png");
+            }
+
+            &._messenger {
+                @include bg-image("icons/messenger-orange.png");
+            }
+
+            &._whatsup {
+                @include bg-image("icons/whatsup-orange.png");
+            }
+
+            &._chat {
+                @include bg-image("icons/chat-orange.png");
+            }
+        }
+    }
+
+    &__address {
+        width: 657px;
+
+        &-controls {
+            margin-bottom: 30px;
+
+            .link._active {
+                padding: 4px 10px;
+                background-color: $orange-dark;
+                color: $color-text;
+            }
+
+            .link + .link {
+                margin-left: 70px;
+            }
+        }
+
+        &-preview {
+            @include row();
+            height: 270px;
+            margin-bottom: 25px;
+        }
+
+        &-photo {
+            width: 250px;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &-data {
+            @include row();
+        }
+
+        &-column {
+            color: $white;
+
+            &:first-child {
+                max-width: 430px;
+                width: 420px;
+                padding-right: 20px;
+            }
+        }
+        
+        &-schedule {
+            margin-top: 7px;
+            color: $orange;
+            font-size: 16px;
+        }
+    }
+
+    &__map {
+
+        &-wrap {
+            position: relative;
+            width: calc(100% - 250px);
+            height: 100%;
+        }
+
+        @include bg-image("map-temp.jpg");
+        width: 100%;
+        height: 100%;
+
+        &-overlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            padding-top: 195px;
+            background-color: rgba(0,0,0,0.3);
+            color: $color-text-gray;
+            @include calibri-bold;
+            font-size: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+}
