@@ -10,7 +10,7 @@ const gulp = require('gulp'),
         sources: {
             styles: 'app/styles/main.scss',
             templates: 'app/*.html',
-            scripts: 'app/js/**/*.js',
+            scripts: 'app/js/*.js',
             images: 'app/images/**/*',
             fonts: 'app/fonts/*'
         },
@@ -36,7 +36,7 @@ gulp.task('browserSync', function () {
             baseDir: './dist'
         },
         host: 'localhost',
-        port: '3003'
+        port: '4205'
     })
 });
 

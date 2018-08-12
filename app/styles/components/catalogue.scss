@@ -1,0 +1,170 @@
+.catalogue {
+    padding-bottom: 85px;
+
+    &__container {
+        @include row(space-between);
+    }
+
+    &__filters {
+        width: 250px;
+
+        &-count {
+            @include row('', center);
+            margin-bottom: 15px;
+            @include calibri-bold;
+            font-size: 17px;
+            line-height: 1;
+
+            &-item {
+                margin-left: 10px;
+                padding: 8px 9px;
+                transition: $transition-time color;
+
+                &:hover {
+                    color: $orange-bright;
+                }
+
+                &._active {
+                    background-color: $orange-bright;
+                    color: $white;
+                    pointer-events: none;
+                }
+            }
+        }
+
+        &-ordering {
+            margin-bottom: 25px;
+        }
+
+        &-title {
+            margin-bottom: 22px;
+            @include roboto-bold;
+            color: $white;
+            font-size: 29px;
+        }
+
+        &-content {
+            margin-left: -50px;
+            padding: 30px 30px 44px 50px;
+            background-color: $brown;
+        }
+
+        &-clear {
+            @include column(flex-start);
+            margin-bottom: 28px;
+
+            &-button {
+                position: relative;
+                border: 1px solid $white;
+                padding: 2px 35px 3px 10px;
+                background-color: $orange-bright;
+                @include calibri-regular;
+                color: $white;
+                font-size: 17px;
+
+                & + & {
+                    margin-top: 6px;
+                }
+
+                &:before,
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: 9px;
+                    width: 12px;
+                    height: 11px;
+                    transform: translateY(-50%);
+                    transition: $transition-time opacity;
+                }
+
+                &:before {
+                    @include bg-image('icons/close-white.png');
+                    opacity: 1;
+                }
+
+                &:after {
+                    @include bg-image("icons/close-black.png");
+                    opacity: 0;
+                }
+
+                &:hover {
+
+                    &:after {
+                        opacity: 1;
+                    }
+
+                    &:before {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+
+        &-category {
+            color: $white;
+
+            &:not(:last-child) {
+                margin-bottom: 25px;
+            }
+
+            &-title {
+                margin-bottom: 13px;
+                @include calibri-bold;
+            }
+
+            &-show {
+                display: inline-block;
+                margin-top: 10px;
+                border-bottom: 1px dashed $brown-dim;
+                color: $brown-dim;
+                font-size: 16px;
+                transition: $transition-time all;
+
+                &:hover {
+                    border-bottom: 1px dashed transparent;
+                    color: $orange-bright;
+                }
+            }
+        }
+    }
+    &__title {
+        margin-bottom: 25px;
+    }
+
+    &__content {
+        width: calc(100% - 310px);
+    }
+
+    &__product-list {
+        padding-bottom: 65px;
+
+        .product {
+            $product-spacing: 75px;
+
+            @media screen and (min-width: 1300px) and (max-width: 1629px) {
+                width: calc((100% - #{$product-spacing * 2}) / 3);
+
+                &:nth-child(3n + 1) {
+                    margin-left: 0;
+                }
+            }
+
+            @media screen and (min-width: 1630px) and (max-width: 1949px) {
+                width: calc((100% - #{$product-spacing * 3}) / 4);
+
+                &:nth-child(4n + 1) {
+                    margin-left: 0;
+                }
+            }
+
+            @media screen and (min-width: 1950px) {
+                width: calc((100% - #{$product-spacing * 4}) / 5);
+
+                &:nth-child(5n + 1) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

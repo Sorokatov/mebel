@@ -1,0 +1,51 @@
+.checkbox {
+    @include row('', center);
+    cursor: pointer;
+
+    & + & {
+        margin-top: 7px;
+    }
+
+    &__input {
+        display: none;
+    }
+
+    &__icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 15px;
+        border: 1px solid $white;
+    }
+
+    &__input:checked + &__icon {
+        position: relative;
+        background-color: $orange-bright;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 11px;
+            height: 11px;
+            transform: translate(-50%, -50%);
+            @include bg-image("icons/checkmark.png");
+        }
+    }
+
+    &__text {
+        @include calibri-regular;
+        border-bottom: 1px solid transparent;
+    }
+
+    &:hover & {
+
+        &__text {
+            border-bottom: 1px solid $white;
+        }
+
+        &__icon {
+            box-shadow: inset 0 0 0 1px $white;
+        }
+    }
+}

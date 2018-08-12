@@ -1,0 +1,89 @@
+.ui-selectmenu {
+
+    &-button {
+        position: relative;
+        width: 100%;
+        display: inline-block;
+        border: 1px solid $border-gray;
+        padding: 5px 12px;
+        font-size: 17px;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &-menu {
+        display: none;
+        position: absolute;
+        padding: 12px 0 15px;
+        background: $white;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    &-open {
+        display: block;
+    }
+
+    &-icon {
+        position: absolute;
+        width: 13px;
+        height: 7px;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            transition: $transition-time opacity;
+        }
+
+        &:before {
+            @include bg-image("icons/caret-gray.png");
+            opacity: 1;
+        }
+
+        &:after {
+            @include bg-image("icons/caret-orange.png");
+            opacity: 0;
+        }
+    }
+
+    &-button:hover &-icon {
+
+        &:before {
+            opacity: 0;
+        }
+
+        &:after {
+            opacity: 1;
+        }
+    }
+
+    &-button-open &-icon {
+        transform: translateY(-50%) rotate(-180deg);
+    }
+}
+
+.ui-menu {
+
+    &-item {
+        padding: 5px 20px;
+        font-size: 17px;
+        transition: $transition-time color;
+        cursor: pointer;
+        
+        &:hover {
+            color: $orange-bright;
+        }
+    }
+}

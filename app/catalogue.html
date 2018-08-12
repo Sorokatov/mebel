@@ -1,0 +1,1044 @@
+//= templates/header.html
+<div class="container-full">
+    <div class="breadcrumbs">
+        <div class="breadcrumbs__container">
+            <a href="/" class="breadcrumbs__link">
+                <span class="breadcrumbs__link-text">Главная</span>
+            </a>
+            <a href="#" class="breadcrumbs__link">
+                <span class="breadcrumbs__link-text">Шкафы</span>
+            </a>
+        </div>
+    </div>
+    <div class="catalogue">
+        <div class="catalogue__container">
+            <div class="catalogue__filters">
+                <div class="catalogue__filters-count">
+                    Товаров на странице:
+                    <a href="#" class="catalogue__filters-count-item _active">15</a>
+                    <a href="#" class="catalogue__filters-count-item">30</a>
+                </div>
+                <div class="catalogue__filters-ordering">
+                    <select class="js-order-filter">
+                        <option value="1" selected>Показать сначала новые</option>
+                        <option value="2">От дешевых к дорогим</option>
+                        <option value="3">От дорогих к дешевым</option>
+                    </select>
+                </div>
+                <div class="catalogue__filters-content">
+                    <div class="catalogue__filters-title">Фильтр</div>
+                    <div class="catalogue__filters-clear">
+                        <a href="#" class="catalogue__filters-clear-button">Очистить все</a>
+                    </div>
+                    <div class="catalogue__filters-category js-filter-category">
+                        <div class="catalogue__filters-category-title">Конструкция</div>
+                        <label class="checkbox js-filter-item">
+                            <input type="checkbox" data-filter-id="9" class="checkbox__input js-filter-item-input">
+                            <i class="checkbox__icon"></i>
+                            <span class="checkbox__text js-filter-item-value">2-х дверные</span>
+                        </label>
+                        <label class="checkbox js-filter-item">
+                            <input type="checkbox" data-filter-id="10" class="checkbox__input js-filter-item-input">
+                            <i class="checkbox__icon"></i>
+                            <span class="checkbox__text js-filter-item-value">3-х дверные</span>
+                        </label>
+                        <label class="checkbox js-filter-item">
+                            <input type="checkbox" data-filter-id="11" class="checkbox__input js-filter-item-input">
+                            <i class="checkbox__icon"></i>
+                            <span class="checkbox__text js-filter-item-value">Угловые</span>
+                        </label>
+                        <a href="#" class="catalogue__filters-category-show js-filter-visibility-toggle _hidden">
+                            <span class="js-filter-show-text">Показать еще</span>
+                            <span class="js-filter-hide-text _hidden">Скрыть</span>
+                            <span class="js-hidden-filters-count"></span>
+                        </a>
+                    </div>
+                    <div class="catalogue__filters-category js-filter-category">
+                        <div class="catalogue__filters-category-title">Материал дверей</div>
+                        <label class="checkbox js-filter-item">
+                            <input type="checkbox" data-filter-id="12" class="checkbox__input js-filter-item-input">
+                            <i class="checkbox__icon"></i>
+                            <span class="checkbox__text js-filter-item-value">Пескоструй Рисунок</span>
+                        </label>
+                        <label class="checkbox js-filter-item">
+                            <input type="checkbox" data-filter-id="13" class="checkbox__input js-filter-item-input">
+                            <i class="checkbox__icon"></i>
+                            <span class="checkbox__text js-filter-item-value">Лакомат</span>
+                        </label>
+                        <label class="checkbox js-filter-item">
+                            <input type="checkbox" data-filter-id="14" class="checkbox__input js-filter-item-input">
+                            <i class="checkbox__icon"></i>
+                            <span class="checkbox__text js-filter-item-value">Фотопечать</span>
+                        </label>
+                        <label class="checkbox js-filter-item">
+                            <input type="checkbox" data-filter-id="15" class="checkbox__input js-filter-item-input">
+                            <i class="checkbox__icon"></i>
+                            <span class="checkbox__text js-filter-item-value">ДСП</span>
+                        </label>
+                        <label class="checkbox js-filter-item">
+                            <input type="checkbox" data-filter-id="16" class="checkbox__input js-filter-item-input">
+                            <i class="checkbox__icon"></i>
+                            <span class="checkbox__text js-filter-item-value">Фанера</span>
+                        </label>
+                        <label class="checkbox js-filter-item">
+                            <input type="checkbox" data-filter-id="17" class="checkbox__input js-filter-item-input">
+                            <i class="checkbox__icon"></i>
+                            <span class="checkbox__text js-filter-item-value">Цельный массив</span>
+                        </label>
+                        <a href="#" class="catalogue__filters-category-show js-filter-visibility-toggle _hidden">
+                            <span class="js-filter-show-text">Показать еще</span>
+                            <span class="js-filter-hide-text _hidden">Скрыть</span>
+                            <span class="js-hidden-filters-count"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="catalogue__content">
+                <h2 class="catalogue__title title">Шкафы Купе</h2>
+                <div class="catalogue__product-list">
+                    <a href="#" class="product">
+                        <div class="product__content">
+                            <div class="product__image-wrap">
+                                <img class="product__image" src="images/product-2.jpg" alt="product-2">
+                                <img class="product__image-alt" src="images/product-1.jpg" alt="product-1">
+                            </div>
+                            <h3 class="product__title">
+                                Шкаф Купе Checkstar
+                                с рисунком пескоструй ...
+                            </h3>
+                            <div class="product__colors">
+                                <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-1.jpg" alt="col-1">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-2.jpg" alt="col-2">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-3.jpg" alt="col-3">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-4.jpg" alt="col-4">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-5.jpg" alt="col-5">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-6.jpg" alt="col-6">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-7.jpg" alt="col-7">
+                                    </span>
+                                    <span class="product__color-more"></span>
+                                </div>
+                                <div class="product__colors-category _sm">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-8.jpg" alt="col-8">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-9.jpg" alt="col-9">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-10.jpg" alt="col-10">
+                                    </span>
+                                </div>
+                                <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-11.jpg" alt="col-11">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-12.jpg" alt="col-12">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-13.jpg" alt="col-13">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-14.jpg" alt="col-14">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-15.jpg" alt="col-15">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-16.jpg" alt="col-16">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-17.jpg" alt="col-17">
+                                    </span>
+                                    <span class="product__color-more"></span>
+                                </div>
+                            </div>
+                            <div class="price__wrap">
+                                <div class="price">
+                                    <span class="price__value">5899 </span>
+                                    <span class="price__period">грн</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="product">
+                        <div class="product__content">
+                            <div class="product__image-wrap">
+                                <img class="product__image" src="images/product-1.jpg" alt="product-1">
+                                <img class="product__image-alt" src="images/product-3.jpg" alt="product-3">
+                            </div>
+                            <h3 class="product__title">
+                                Купе Шкаф Класик 004, матовые двери
+                            </h3>
+                            <div class="product__colors">
+                                <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-1.jpg" alt="col-1">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-2.jpg" alt="col-2">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-3.jpg" alt="col-3">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-4.jpg" alt="col-4">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-5.jpg" alt="col-5">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-6.jpg" alt="col-6">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-7.jpg" alt="col-7">
+                                    </span>
+                                    <span class="product__color-more"></span>
+                                </div>
+                                <div class="product__colors-category _sm">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-8.jpg" alt="col-8">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-9.jpg" alt="col-9">
+                                    </span>
+                                </div>
+                                <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-11.jpg" alt="col-11">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="price__wrap">
+                                <div class="price _discount">
+                                    <span class="price__old-value">5899</span>
+                                    <span class="price__value">4999</span>
+                                    <span class="price__period">грн</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="product">
+                        <div class="product__content">
+                            <div class="product__image-wrap">
+                                <img class="product__image" src="images/product-2.jpg" alt="product-2">
+                                <img class="product__image-alt" src="images/product-3.jpg" alt="product-3">
+                            </div>
+                            <h3 class="product__title">
+                                Шкаф Класик 001 с зеркальными дверями
+                            </h3>
+                            <div class="product__colors">
+                                <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-1.jpg" alt="col-1">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-2.jpg" alt="col-2">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-3.jpg" alt="col-3">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-4.jpg" alt="col-4">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-5.jpg" alt="col-5">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-6.jpg" alt="col-6">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-7.jpg" alt="col-7">
+                                    </span>
+                                    <span class="product__color-more"></span>
+                                </div>
+                                <div class="product__colors-category _sm">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-8.jpg" alt="col-8">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-9.jpg" alt="col-9">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-10.jpg" alt="col-10">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="price__wrap">
+                                <div class="price">
+                                    <span class="price__value">3800</span>
+                                    <span class="price__period">грн</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="product">
+                        <div class="product__content">
+                            <div class="product__image-wrap">
+                                <img class="product__image" src="images/product-2.jpg" alt="product-2">
+                                <img class="product__image-alt" src="images/product-1.jpg" alt="product-1">
+                            </div>
+                            <h3 class="product__title">
+                                Шкаф Купе Checkstar
+                                с рисунком пескоструй ...
+                            </h3>
+                            <div class="product__colors">
+                                <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-1.jpg" alt="col-1">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-2.jpg" alt="col-2">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-3.jpg" alt="col-3">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-4.jpg" alt="col-4">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-5.jpg" alt="col-5">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-6.jpg" alt="col-6">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-7.jpg" alt="col-7">
+                                    </span>
+                                    <span class="product__color-more"></span>
+                                </div>
+                                <div class="product__colors-category _sm">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-8.jpg" alt="col-8">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-9.jpg" alt="col-9">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-10.jpg" alt="col-10">
+                                    </span>
+                                </div>
+                                <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-11.jpg" alt="col-11">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-12.jpg" alt="col-12">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-13.jpg" alt="col-13">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-14.jpg" alt="col-14">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-15.jpg" alt="col-15">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-16.jpg" alt="col-16">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-17.jpg" alt="col-17">
+                                    </span>
+                                    <span class="product__color-more"></span>
+                                </div>
+                            </div>
+                            <div class="price__wrap">
+                                <div class="price">
+                                    <span class="price__value">5899 </span>
+                                    <span class="price__period">грн</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="product">
+                        <div class="product__content">
+                            <div class="product__image-wrap">
+                                <img class="product__image" src="images/product-1.jpg" alt="product-1">
+                                <img class="product__image-alt" src="images/product-3.jpg" alt="product-3">
+                            </div>
+                            <h3 class="product__title">
+                                Купе Шкаф Класик 004, матовые двери
+                            </h3>
+                            <div class="product__colors">
+                                <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-1.jpg" alt="col-1">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-2.jpg" alt="col-2">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-3.jpg" alt="col-3">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-4.jpg" alt="col-4">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-5.jpg" alt="col-5">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-6.jpg" alt="col-6">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-7.jpg" alt="col-7">
+                                    </span>
+                                    <span class="product__color-more"></span>
+                                </div>
+                                <div class="product__colors-category _sm">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-8.jpg" alt="col-8">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-9.jpg" alt="col-9">
+                                    </span>
+                                </div>
+                                <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-11.jpg" alt="col-11">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="price__wrap">
+                                <div class="price _discount">
+                                    <span class="price__old-value">5899</span>
+                                    <span class="price__value">4999</span>
+                                    <span class="price__period">грн</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="product">
+                        <div class="product__content">
+                            <div class="product__image-wrap">
+                                <img class="product__image" src="images/product-2.jpg" alt="product-2">
+                                <img class="product__image-alt" src="images/product-3.jpg" alt="product-3">
+                            </div>
+                            <h3 class="product__title">
+                                Шкаф Класик 001 с зеркальными дверями
+                            </h3>
+                            <div class="product__colors">
+                                <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-1.jpg" alt="col-1">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-2.jpg" alt="col-2">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-3.jpg" alt="col-3">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-4.jpg" alt="col-4">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-5.jpg" alt="col-5">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-6.jpg" alt="col-6">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-7.jpg" alt="col-7">
+                                    </span>
+                                    <span class="product__color-more"></span>
+                                </div>
+                                <div class="product__colors-category _sm">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-8.jpg" alt="col-8">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-9.jpg" alt="col-9">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-10.jpg" alt="col-10">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="price__wrap">
+                                <div class="price">
+                                    <span class="price__value">3800</span>
+                                    <span class="price__period">грн</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="product">
+                        <div class="product__content">
+                            <div class="product__image-wrap">
+                                <img class="product__image" src="images/product-2.jpg" alt="product-2">
+                                <img class="product__image-alt" src="images/product-1.jpg" alt="product-1">
+                            </div>
+                            <h3 class="product__title">
+                                Шкаф Купе Checkstar
+                                с рисунком пескоструй ...
+                            </h3>
+                            <div class="product__colors">
+                                <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-1.jpg" alt="col-1">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-2.jpg" alt="col-2">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-3.jpg" alt="col-3">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-4.jpg" alt="col-4">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-5.jpg" alt="col-5">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-6.jpg" alt="col-6">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-7.jpg" alt="col-7">
+                                    </span>
+                                    <span class="product__color-more"></span>
+                                </div>
+                                <div class="product__colors-category _sm">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-8.jpg" alt="col-8">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-9.jpg" alt="col-9">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-10.jpg" alt="col-10">
+                                    </span>
+                                </div>
+                                <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-11.jpg" alt="col-11">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-12.jpg" alt="col-12">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-13.jpg" alt="col-13">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-14.jpg" alt="col-14">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-15.jpg" alt="col-15">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-16.jpg" alt="col-16">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-17.jpg" alt="col-17">
+                                    </span>
+                                    <span class="product__color-more"></span>
+                                </div>
+                            </div>
+                            <div class="price__wrap">
+                                <div class="price">
+                                    <span class="price__value">5899 </span>
+                                    <span class="price__period">грн</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="product">
+                        <div class="product__content">
+                            <div class="product__image-wrap">
+                                <img class="product__image" src="images/product-1.jpg" alt="product-1">
+                                <img class="product__image-alt" src="images/product-3.jpg" alt="product-3">
+                            </div>
+                            <h3 class="product__title">
+                                Купе Шкаф Класик 004, матовые двери
+                            </h3>
+                            <div class="product__colors">
+                                <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-1.jpg" alt="col-1">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-2.jpg" alt="col-2">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-3.jpg" alt="col-3">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-4.jpg" alt="col-4">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-5.jpg" alt="col-5">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-6.jpg" alt="col-6">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-7.jpg" alt="col-7">
+                                    </span>
+                                    <span class="product__color-more"></span>
+                                </div>
+                                <div class="product__colors-category _sm">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-8.jpg" alt="col-8">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-9.jpg" alt="col-9">
+                                    </span>
+                                </div>
+                                <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-11.jpg" alt="col-11">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="price__wrap">
+                                <div class="price _discount">
+                                    <span class="price__old-value">5899</span>
+                                    <span class="price__value">4999</span>
+                                    <span class="price__period">грн</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="product">
+                        <div class="product__content">
+                            <div class="product__image-wrap">
+                                <img class="product__image" src="images/product-2.jpg" alt="product-2">
+                                <img class="product__image-alt" src="images/product-3.jpg" alt="product-3">
+                            </div>
+                            <h3 class="product__title">
+                                Шкаф Класик 001 с зеркальными дверями
+                            </h3>
+                            <div class="product__colors">
+                                <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-1.jpg" alt="col-1">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-2.jpg" alt="col-2">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-3.jpg" alt="col-3">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-4.jpg" alt="col-4">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-5.jpg" alt="col-5">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-6.jpg" alt="col-6">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-7.jpg" alt="col-7">
+                                    </span>
+                                    <span class="product__color-more"></span>
+                                </div>
+                                <div class="product__colors-category _sm">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-8.jpg" alt="col-8">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-9.jpg" alt="col-9">
+                                    </span>
+                                    <span class="product__color">
+                                        <img src="images/colors/col-10.jpg" alt="col-10">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="price__wrap">
+                                <div class="price">
+                                    <span class="price__value">3800</span>
+                                    <span class="price__period">грн</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="pagination">
+                    <div class="pagination__container">
+                        <a href="#" class="pagination__item _active">1</a>
+                        <a href="#" class="pagination__item">2</a>
+                        <a href="#" class="pagination__item">3</a>
+                        <a href="#" class="pagination__item">4</a>
+                        <a href="#" class="pagination__item">5</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contact-us">
+    <div class="contact-us__container container">
+        <div class="contact-us__socials">
+            <div class="contact-us__title">
+                <h2 class="title _color-white">Есть вопрос?</h2>
+            </div>
+            <div class="contact-us__socials-text">
+                Хотите перезвоним Вам за 30 секунд ? :)<br>
+                Оставьте свой телефон:
+            </div>
+            <div class="contact-us__socials-recall">
+                <input type="text" class="input" value="+38">
+                <button class="button">Перезвоните мне</button>
+            </div>
+            <div class="contact-us__socials-text">
+                Или пишите нам прямо сейчас,<br>
+                с радостью ответим на все Ваши вопросы
+            </div>
+            <div class="contact-us__socials-block">
+                <a href="#" class="contact-us__socials-item">
+                    <i class="contact-us__socials-icon _viber"></i>
+                    Viber
+                </a>
+                <a href="#" class="contact-us__socials-item">
+                    <i class="contact-us__socials-icon _telegram"></i>
+                    Telegram
+                </a>
+                <a href="#" class="contact-us__socials-item">
+                    <i class="contact-us__socials-icon _messenger"></i>
+                    Facebook Messenger
+                </a>
+                <a href="#" class="contact-us__socials-item">
+                    <i class="contact-us__socials-icon _whatsup"></i>
+                    WhatsApp
+                </a>
+                <a href="#" class="contact-us__socials-item">
+                    <i class="contact-us__socials-icon _chat"></i>
+                    Онлайн Чат
+                </a>
+            </div>
+        </div>
+        <div class="contact-us__address">
+            <div class="contact-us__title">
+                <h2 class="title _color-white">Приходите к нам в Шоурум</h2>
+            </div>
+            <div class="contact-us__address-controls">
+                <a href="#" class="link _color-orange _active">
+                    <span class="link__text">Одесса №1</span>
+                </a>
+                <a href="#" class="link _color-orange">
+                    <span class="link__text">Одесса №2</span>
+                </a>
+                <a href="#" class="link _color-orange">
+                    <span class="link__text">Киев</span>
+                </a>
+            </div>
+            <div class="contact-us__address-preview">
+                <div class="contact-us__map-wrap">
+                    <div class="contact-us__map-overlay">Нажмите для просмотра</div>
+                    <div class="contact-us__map"></div>
+                </div>
+                <div class="contact-us__address-photo">
+                    <img src="images/showroom.jpg">
+                </div>
+            </div>
+            <div class="contact-us__address-data">
+                <div class="contact-us__address-column">
+                    Одесса, ул. Семена Палия, 125, магазин 290
+                    <div class="contact-us__address-schedule">Вт - Вс, с 9:00 до 14:00</div>
+                </div>
+                <div class="contact-us__address-column">
+                    +38 (050) 555 - 45 - 55
+                    <div class="contact-us__address-schedule">с 10:00 до 20:00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="recommended">
+    <div class="recommended__container container">
+        <div class="recommended__title">
+            <h2 class="title">Похожие товары</h2>
+        </div>
+        <div class="recommended__items">
+            <div class="product">
+                <div class="product__content">
+                    <div class="product__image-wrap">
+                        <img class="product__image" src="images/product-2.jpg" alt="product-2">
+                        <img class="product__image-alt" src="images/product-1.jpg" alt="product-1">
+                    </div>
+                    <h3 class="product__title">
+                        Шкаф Купе Checkstar
+                        с рисунком пескоструй ...
+                    </h3>
+                    <div class="product__colors">
+                        <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-1.jpg" alt="col-1">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-2.jpg" alt="col-2">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-3.jpg" alt="col-3">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-4.jpg" alt="col-4">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-5.jpg" alt="col-5">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-6.jpg" alt="col-6">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-7.jpg" alt="col-7">
+                                    </span>
+                            <span class="product__color-more"></span>
+                        </div>
+                        <div class="product__colors-category _sm">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-8.jpg" alt="col-8">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-9.jpg" alt="col-9">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-10.jpg" alt="col-10">
+                                    </span>
+                        </div>
+                        <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-11.jpg" alt="col-11">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-12.jpg" alt="col-12">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-13.jpg" alt="col-13">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-14.jpg" alt="col-14">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-15.jpg" alt="col-15">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-16.jpg" alt="col-16">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-17.jpg" alt="col-17">
+                                    </span>
+                            <span class="product__color-more"></span>
+                        </div>
+                    </div>
+                    <div class="price__wrap">
+                        <div class="price">
+                            <span class="price__value">4050</span>
+                            <span class="price__period">грн</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product__content">
+                    <div class="product__image-wrap">
+                        <img class="product__image" src="images/product-1.jpg" alt="product-1">
+                        <img class="product__image-alt" src="images/product-3.jpg" alt="product-3">
+                    </div>
+                    <h3 class="product__title">
+                        Купе Шкаф Класик 004, матовые двери
+                    </h3>
+                    <div class="product__colors">
+                        <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-1.jpg" alt="col-1">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-2.jpg" alt="col-2">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-3.jpg" alt="col-3">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-4.jpg" alt="col-4">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-5.jpg" alt="col-5">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-6.jpg" alt="col-6">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-7.jpg" alt="col-7">
+                                    </span>
+                            <span class="product__color-more"></span>
+                        </div>
+                        <div class="product__colors-category _sm">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-8.jpg" alt="col-8">
+                                    </span>
+                            <span class="product__color">
+                                        <img src="images/colors/col-9.jpg" alt="col-9">
+                                    </span>
+                        </div>
+                        <div class="product__colors-category">
+                                    <span class="product__color">
+                                        <img src="images/colors/col-11.jpg" alt="col-11">
+                                    </span>
+                        </div>
+                    </div>
+                    <div class="price__wrap">
+                        <div class="price _discount">
+                            <span class="price__old-value">4500</span>
+                            <span class="price__value">4050</span>
+                            <span class="price__period">грн</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product__content">
+                    <div class="product__image-wrap">
+                        <img class="product__image" src="images/product-2.jpg" alt="product-2">
+                        <img class="product__image-alt" src="images/product-3.jpg" alt="product-3">
+                    </div>
+                    <h3 class="product__title">
+                        Шкаф Класик 001 с зеркальными дверями
+                    </h3>
+                    <div class="product__colors">
+                        <div class="product__colors-category">
+                                        <span class="product__color">
+                                            <img src="images/colors/col-1.jpg" alt="col-1">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-2.jpg" alt="col-2">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-3.jpg" alt="col-3">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-4.jpg" alt="col-4">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-5.jpg" alt="col-5">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-6.jpg" alt="col-6">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-7.jpg" alt="col-7">
+                                        </span>
+                            <span class="product__color-more"></span>
+                        </div>
+                        <div class="product__colors-category _sm">
+                                        <span class="product__color">
+                                            <img src="images/colors/col-8.jpg" alt="col-8">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-9.jpg" alt="col-9">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-10.jpg" alt="col-10">
+                                        </span>
+                        </div>
+                    </div>
+                    <div class="price__wrap">
+                        <div class="price _sold-out">
+                            <span class="price__old-value">4500</span>
+                            <span class="price__value">4050</span>
+                            <span class="price__period">грн</span>
+                        </div>
+                        <span class="price__label">Продано</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product__content">
+                    <div class="product__image-wrap">
+                        <img class="product__image" src="images/product-2.jpg" alt="product-2">
+                        <img class="product__image-alt" src="images/product-1.jpg" alt="product-1">
+                    </div>
+                    <h3 class="product__title">
+                        Шкаф Купе Checkstar
+                        с рисунком пескоструй ...
+                    </h3>
+                    <div class="product__colors">
+                        <div class="product__colors-category">
+                                        <span class="product__color">
+                                            <img src="images/colors/col-1.jpg" alt="col-1">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-2.jpg" alt="col-2">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-3.jpg" alt="col-3">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-4.jpg" alt="col-4">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-5.jpg" alt="col-5">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-6.jpg" alt="col-6">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-7.jpg" alt="col-7">
+                                        </span>
+                            <span class="product__color-more"></span>
+                        </div>
+                        <div class="product__colors-category _sm">
+                                        <span class="product__color">
+                                            <img src="images/colors/col-8.jpg" alt="col-8">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-9.jpg" alt="col-9">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-10.jpg" alt="col-10">
+                                        </span>
+                        </div>
+                        <div class="product__colors-category">
+                                        <span class="product__color">
+                                            <img src="images/colors/col-11.jpg" alt="col-11">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-12.jpg" alt="col-12">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-13.jpg" alt="col-13">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-14.jpg" alt="col-14">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-15.jpg" alt="col-15">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-16.jpg" alt="col-16">
+                                        </span>
+                            <span class="product__color">
+                                            <img src="images/colors/col-17.jpg" alt="col-17">
+                                        </span>
+                            <span class="product__color-more"></span>
+                        </div>
+                    </div>
+                    <div class="price__wrap">
+                        <div class="price">
+                            <span class="price__value">4050</span>
+                            <span class="price__period">грн</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+//= templates/footer.html

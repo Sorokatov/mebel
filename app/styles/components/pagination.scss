@@ -1,0 +1,30 @@
+.pagination {
+
+    &__container {
+        @include row();
+    }
+
+    &__item {
+        width: 50px;
+        padding: 12px 0;
+        @include calibri-bold;
+        font-size: 26.5px;
+        line-height: 1;
+        text-align: center;
+        transition: $transition-time color;
+
+        &:hover {
+            color: $orange-bright;
+        }
+
+        &._active {
+            background-color: $orange-bright;
+            color: $white;
+            pointer-events: none;
+        }
+
+        & + & {
+            margin-left: 10px;
+        }
+    }
+}

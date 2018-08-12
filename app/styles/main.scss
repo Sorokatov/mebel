@@ -7,23 +7,30 @@
 
 // Partials imports
 
+@import "partials/jquery-ui";
 @import "partials/owl-carousel";
 @import "partials/slick";
 
 // Shared imports
 
 @import "shared/button";
+@import "shared/checkbox";
+@import "shared/dots-separator";
 @import "shared/input";
 @import "shared/link";
 @import "shared/title";
 
 // Components imports
 
+@import "components/breadcrumbs";
+@import "components/catalogue";
 @import "components/categories-view";
 @import "components/contact-us";
 @import "components/footer";
 @import "components/header";
-@import "components/most-popular";
 @import "components/news";
+@import "components/pagination";
 @import "components/price";
+@import "components/product";
+@import "components/recommended";
 @import "components/showcase";

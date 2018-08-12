@@ -19,6 +19,7 @@ h3,
 h4,
 h5 {
     margin: 0;
+    font-size: inherit;
 }
 
 ul {
@@ -68,4 +69,14 @@ p {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+
+    &-full {
+        max-width: 100%;
+        width: 100%;
+        padding: 0 50px;
+    }
+}
+
+._hidden {
+    display: none !important;
 }
