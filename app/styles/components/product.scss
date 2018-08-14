@@ -144,7 +144,8 @@
 
         &__image {
             width: 550px;
-            height: 600px;
+            height: auto;
+            max-height: 600px;
 
             & > img {
                 max-width: 100%;
@@ -196,7 +197,7 @@
 
         &__constructor {
             @include row(space-between);
-            margin-bottom: 40px;
+            margin-bottom: 35px;
 
             &-column {
 
@@ -219,6 +220,13 @@
 
                 &:not(:last-child) {
                     margin-bottom: 35px;
+                }
+            }
+
+            &-column:only-child &-block {
+
+                &:not(:last-child) {
+                    margin-bottom: 25px;
                 }
             }
 
@@ -266,9 +274,10 @@
                 }
 
                 &._text {
-                    width: 80px;
+                    min-width: 80px;
+                    width: auto;
                     height: auto;
-                    padding: 2px 0;
+                    padding: 2px 15px;
                     border: 1px solid $border-gray;
                     text-align: center;
 
@@ -345,6 +354,10 @@
             &-text {
                 margin-top: 35px;
                 font-size: 17.5px;
+
+                & + & {
+                    margin-top: 20px;
+                }
             }
 
             .link {
@@ -368,6 +381,7 @@
 
                 .button {
                     margin-right: 28px;
+                    min-width: 175px;
                 }
 
                 .link {
@@ -378,6 +392,7 @@
         }
 
         &__data {
+            padding-left: 60px;
 
             &-title {
                 @include roboto-bold;
@@ -387,6 +402,7 @@
 
             &-desc {
                 margin-bottom: 55px;
+                padding-right: 20px;
                 line-height: 1.5;
             }
 
@@ -405,7 +421,7 @@
                 }
 
                 &-wrapper {
-                    @include row(space-between);
+                    @include row();
 
                     & + & {
                         margin-top: 68px;
@@ -477,6 +493,101 @@
                         background-color: $color-text;
                         border-radius: 100%;
                     }
+                }
+            }
+        }
+
+        &__responses {
+            margin: 0 60px;
+            padding: 40px 0 60px;
+            @include bg-image('line-separator.png');
+            background-position: left top;
+            background-repeat: repeat-x;
+
+            &-content {
+                @include row(space-between);
+                margin-bottom: 40px;
+            }
+
+            &-item {
+                width: 333px;
+
+                &-text {
+                    position: relative;
+                    margin-bottom: 10px;
+                    line-height: 1.4;
+
+                    &._collapsed {
+                        max-height: 123px;
+                        overflow-y: hidden;
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            height: 30px;
+                            width: 100%;
+                            background-image: linear-gradient(to top, white, transparent);
+                        }
+                    }
+                }
+            }
+
+            &-author {
+                position: relative;
+                display: block;
+                margin-top: 15px;
+                padding-left: 25px;
+                @include caveat-regular;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 4px;
+                    left: 0;
+                    width: 14px;
+                    height: 16px;
+                    @include bg-image('icons/user.png');
+                }
+            }
+
+            &-controls {
+                @include row(space-between);
+            }
+
+            &-nav {
+                @include row();
+
+                &-item {
+                    position: relative;
+                    @include row(center, center);
+                    width: 46px;
+                    height: 46px;
+                    border: 1px solid $orange;
+                    transition: $transition-time border-color;
+
+                    & + & {
+                        margin-left: 12px;
+                    }
+
+                    &._next {
+                        transform: scale(-1, 1);
+                    }
+
+                    &:hover {
+                        border-color: $orange-bright;
+                    }
+                }
+
+                &-icon {
+                    fill: $orange;
+                    transition: $transition-time fill;
+                }
+
+                &-item:hover &-icon {
+                    fill: $orange-bright
+
                 }
             }
         }

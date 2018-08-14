@@ -22,4 +22,19 @@
             background-color: $skyblue - 50;
         }
     }
+
+    &._inverted {
+        border: 1px solid $orange;
+        background-color: $white;
+        color: $orange;
+        font-size: 18.5px;
+        line-height: 1;
+        @include calibri-regular;
+        text-transform: none;
+
+        &:hover {
+            color: $orange-bright;
+            border-color: $orange-bright;
+        }
+    }
 }
