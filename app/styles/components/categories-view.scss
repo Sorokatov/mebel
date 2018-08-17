@@ -17,10 +17,14 @@
     }
 
     &__content {
+        display: none;
         margin-bottom: 30px;
-        @include row();
         width: 100%;
         padding: 0 100px 0 45px;
+
+        &._active {
+            @include row();
+        }
 
         &-img {
             width: 410px;

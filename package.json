@@ -9,6 +9,7 @@
   "author": "Maksym Sorokatov",
   "license": "ISC",
   "dependencies": {
+    "inputmask": "^4.0.0",
     "jquery": "^3.3.1",
     "jquery-parallax.js": "^1.5.0",
     "magnific-popup": "^1.1.0",

@@ -19,13 +19,21 @@
             filterVisibilityToggle: '.js-filter-visibility-toggle',
             filterVisibilityCounter: '.js-hidden-filters-count',
             filterVisibilityShowText: '.js-filter-show-text',
-            filterVisibilityHideText: '.js-filter-hide-text'
-
+            filterVisibilityHideText: '.js-filter-hide-text',
+            categoryViewContainer: '.js-category-view-container',
+            categoryViewContent: '.js-category-view-content',
+            categoryViewLink: '.js-category-view-link',
+            phoneInput: '.js-phone-number-input',
+            colorLink: '.js-color-link',
+            sizeLink: '.js-size-link',
+            sizeValue: '.js-size-value',
+            sizeInput: '.js-size-input'
         },
 
         CLASSES: {
             hidden: '_hidden',
-            open: '_open'
+            open: '_open',
+            active: '_active'
         },
 
         init: function () {
@@ -34,11 +42,16 @@
             this.initSlider();
             this.initSelectmenu();
             this.initFiltersCount();
+            this.initPhoneMask();
         },
 
         initEventListeners: function () {
             $(document).on('click', this.SELECTORS.filterVisibilityToggle, this.toggleFiltersVisibility.bind(this));
-            $(document).on('change', this.SELECTORS.filterItemInput, this.changeFilterState.bind(this));
+            $(document).on('mouseover', this.SELECTORS.categoryViewLink, this.changeCategoryViewContent.bind(this));
+            $(document).on('click', this.SELECTORS.colorLink, this.redirectToProductWithParam.bind(this));
+            $(document).on('click', this.SELECTORS.sizeLink, this.showSizeInput.bind(this));
+            $(document).on('blur', this.SELECTORS.sizeInput, this.showSizeValue.bind(this));
+            $(document).on('keyup', this.SELECTORS.sizeInput, this.handleSizeInputKeys.bind(this));
         },
 
         initSelectmenu: function () {
@@ -89,6 +102,12 @@
             }
         },
 
+        initPhoneMask: function () {
+            $(this.SELECTORS.phoneInput).inputmask({
+                mask: '+38 (999) 999-99-99'
+            })
+        },
+
         toggleFiltersVisibility: function (event) {
             var $self = $(event.currentTarget),
                 $parentCategory = $self.closest(this.SELECTORS.filterCategory),
@@ -100,8 +119,65 @@
             $self.find(this.SELECTORS.filterVisibilityShowText).toggleClass(this.CLASSES.hidden);
         },
 
-        changeFilterState: function (event) {
+        changeCategoryViewContent: function (event) {
+            var $self = $(event.currentTarget),
+                contentAttr = $self.data('content'),
+                $contentTarget = $self.closest(this.SELECTORS.categoryViewContainer)
+                    .find(this.SELECTORS.categoryViewContent + "[data-content='" + contentAttr + "']");
 
+            if (!$contentTarget.hasClass(this.CLASSES.active)) {
+                $(this.SELECTORS.categoryViewContent + ', ' + this.SELECTORS.categoryViewLink).removeClass(this.CLASSES.active);
+                $contentTarget.addClass(this.CLASSES.active);
+                $self.addClass(this.CLASSES.active);
+            }
+        },
+
+        redirectToProductWithParam: function (event) {
+            event.preventDefault();
+
+            // here should be product redirect by color click
+        },
+
+        showSizeInput: function (event) {
+            var $self = $(event.currentTarget),
+                $sizeInput = $self.next();
+
+            $self.addClass(this.CLASSES.hidden);
+
+            $sizeInput
+                .val($self.find(this.SELECTORS.sizeValue).data('value'))
+                .removeClass(this.CLASSES.hidden)
+                .focus();
+        },
+
+        showSizeValue: function (event) {
+            event.preventDefault();
+            this.showAndUpdateSizeValue($(event.currentTarget));
+        },
+
+        handleSizeInputKeys: function (event) {
+            var $self = $(event.currentTarget);
+
+            // ESC
+            if (event.keyCode === 27) {
+                $self.val($self.prev().find(this.SELECTORS.sizeValue).data('value'));
+                this.showAndUpdateSizeValue($self);
+            }
+
+            // ENTER
+            if(event.keyCode === 13) {
+                this.showAndUpdateSizeValue($self);
+            }
+
+        },
+
+        showAndUpdateSizeValue: function (inputElem) {
+            var $self = inputElem,
+                value = $self.val();
+
+            $self.addClass(this.CLASSES.hidden)
+                .prev().removeClass(this.CLASSES.hidden)
+                .find(this.SELECTORS.sizeValue).data('value', value).html(value)
         }
     };
 

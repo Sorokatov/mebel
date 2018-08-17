@@ -311,6 +311,17 @@
                     min-width: 40px;
                     text-align: right;
                 }
+
+                &-input {
+                    width: 40px;
+                    margin-left: 10px;
+                    margin-bottom: 1px;
+                    text-align: right;
+                    color: $orange;
+                    @include calibri-regular;
+                    font-size: 18.5px;
+                }
+
             }
         }
 
