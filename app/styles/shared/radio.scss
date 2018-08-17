@@ -1,0 +1,46 @@
+.radio {
+    @include inline-row('', center);
+    cursor: pointer;
+
+    &__input {
+        display: none;
+    }
+
+    &__icon {
+        position: relative;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        margin-right: 12px;
+        border: 1px solid $orange;
+        border-radius: 100%;
+        transition: $transition-time all;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 50%;
+            left: 50%;
+            border-radius: 100%;
+            transform: translate(-50%, -50%) scale(0);
+            background-color: $orange;
+            transition: $transition-time all;
+        }
+    }
+
+    &__input:checked + &__icon {
+        border-color: $orange-bright;
+
+        &:before {
+            background-color: $orange-bright;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    &__text {
+        font-size: 17px;
+        color: $orange;
+    }
+}

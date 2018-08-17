@@ -5,4 +5,8 @@
     height: 2px;
     @include bg-image('dots-separator.png');
     background-repeat: repeat-x;
+
+    &._brown {
+        @include bg-image('dots-separator-brown.png')
+    }
 }

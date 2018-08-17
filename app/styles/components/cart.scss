@@ -1,0 +1,520 @@
+.cart {
+    position: fixed;
+    @include row();
+    width: 1080px;
+    min-height: 720px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: $white;
+
+    &__content {
+        width: 740px;
+        height: 100%;
+        padding: 0 50px;
+        background-color: $white;
+    }
+
+    &__content,
+    &__info {
+        padding: 40px 50px;
+    }
+
+    &__close {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        width: 17px;
+        height: 17px;
+        cursor: pointer;
+
+        &-icon {
+            width: 100%;
+            height: 100%;
+            fill: $white;
+            transition: $transition-time fill;
+        }
+
+        &:hover &-icon {
+            fill: $orange-bright;
+        }
+    }
+
+    &__empty {
+        @include column(center);
+        padding-top: 240px;
+
+        &-title {
+            margin-bottom: 30px;
+            @include roboto-bold;
+            font-size: 32px;
+        }
+
+        &-desc {
+            margin-bottom: 75px;
+        }
+    }
+
+    &__item {
+
+        & + & {
+            margin-top: 50px;
+            border-top: 1px solid $border-gray;
+            padding-top: 35px;
+        }
+
+        &-title {
+            @include row();
+            margin-bottom: 30px;
+
+            &-text {
+                padding-top: 9px;
+                padding-right: 90px;
+                @include roboto-bold;
+                font-size: 20px;
+                line-height: 1.5;
+            }
+        }
+
+        &-delete {
+            @include row(center, center);
+            width: 40px;
+            min-width: 40px;
+            height: 40px;
+            margin-right: 20px;
+            border: 1px solid $orange-bright;
+            background-color: $white;
+            transition: $transition-time background-color;
+            cursor: pointer;
+
+            &-icon {
+                fill: $orange-bright;
+                transition: $transition-time fill;
+            }
+
+            &:hover {
+                background-color: $orange-bright;
+            }
+
+            &:hover &-icon {
+                fill: $white;
+            }
+        }
+
+        &-card {
+            @include row();
+        }
+
+        &-img {
+
+            &-wrap {
+                width: 265px;
+                min-width: 265px;
+                max-height: 285px;
+                margin-right: 30px;
+            }
+
+            width: auto;
+            height: auto;
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        &-info {
+            width: calc(100% - 295px);
+            font-size: 17px;
+
+            &-row {
+                position: relative;
+                z-index: 1;
+                @include row(space-between, flex-end);
+
+                & + & {
+                    margin-top: 10px;
+                }
+
+                .dots-separator {
+                    position: absolute;
+                    z-index: -1;
+                    bottom: 5px;
+                }
+            }
+
+            &-char {
+                max-width: 150px;
+                padding-right: 13px;
+            }
+
+            &-label {
+                margin-bottom: 5px;
+            }
+
+            &-char,
+            &-value {
+                background-color: $white;
+            }
+
+            &-value {
+                position: relative;
+                width: 115px;
+                max-width: 115px;
+                padding-right: 35px;
+                @include calibri-bold;
+                text-align: right;
+                box-sizing: border-box;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            &-thumb {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+
+            &-sizes {
+                width: 160px;
+                margin-bottom: 20px;
+            }
+
+            &-sizes & {
+
+                &-char {
+                    min-width: 66px;
+                }
+
+                &-value {
+                    min-width: 45px;
+                }
+
+                &-char,
+                &-value {
+                    max-width: none;
+                    width: auto;
+                    padding-right: 0;
+                }
+            }
+
+            &-sizes &-row + &-row {
+                margin-top: 5px;
+            }
+
+            &-data {
+                margin-bottom: 40px;
+            }
+        }
+
+        &-price {
+            @include row(space-between);
+
+            &-block {
+                width: 105px;
+            }
+
+            &-label {
+                padding-bottom: 8px;
+            }
+
+            &-value {
+                @include calibri-bold;
+                font-size: 21px;
+            }
+        }
+
+        &-qty {
+            @include row('', flex-end);
+            height: 21px;
+
+            &-value {
+                width: 35px;
+                line-height: 15px;
+                text-align: center;
+            }
+
+            &-control {
+                position: relative;
+                width: 15px;
+                height: 15px;
+                border: 1px solid $border-gray;
+                transition: $transition-time border-color;
+                cursor: pointer;
+
+                &:hover {
+                    border-color: $orange-bright;
+
+                    &:before,
+                    &:after {
+                        background-color: $orange-bright;
+                    }
+                }
+
+                &:before,
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    background-color: $border-gray;
+                    transition: $transition-time background-color;
+                }
+
+                &:before {
+                    width: 9px;
+                    height: 1px;
+                    margin-left: -4.5px;
+                    margin-top: -.5px;
+                }
+
+                &:after {
+                    height: 9px;
+                    width: 1px;
+                    margin-left: -.5px;
+                    margin-top: -4.5px;
+                }
+
+                &._minus:after {
+                    display: none;
+                }
+
+                &._disabled {
+                    opacity: .5;
+                    pointer-events: none;
+                }
+            }
+        }
+
+        &-delivery {
+            @include row('', center);
+            margin-top: 40px;
+            border: 1px solid $orange;
+            padding: 20px 14px;
+
+            .checkbox,
+            &-price {
+                flex-shrink: 0;
+            }
+
+            &-price {
+                @include calibri-bold;
+                margin-left: 15px;
+            }
+
+            .checkbox {
+                margin-right: 15px;
+            }
+
+            .dots-separator {
+                margin-top: 7px;
+            }
+        }
+    }
+
+    &__info {
+        @include column(flex-start);
+        position: relative;
+        width: 340px;
+        background-color: $color-text;
+
+        &-title {
+            margin-bottom: 25px;
+            @include roboto-bold;
+            font-size: 24px;
+            color: $white;
+            letter-spacing: -.5px;
+        }
+
+        &-phone {
+            margin-bottom: 30px;
+
+            &-label {
+                display: inline-block;
+                margin-bottom: 8px;
+                font-size: 17px;
+                color: $orange;
+            }
+
+            .input {
+                width: 100%;
+                padding: 8px 13px;
+            }
+        }
+
+        &-delivery {
+            @include row('', baseline);
+            margin-bottom: 15px;
+
+            &-label {
+                margin-right: 5px;
+                font-size: 17px;
+                color: $orange;
+            }
+
+            .link._color-orange {
+                color: $white;
+                @include calibri-bold;
+            }
+
+            &-wrap {
+
+                & + & {
+                    margin-top: 10px;
+                }
+            }
+
+            &-note {
+                margin-top: 13px;
+                color: $brown-dark;
+                font-size: 14.5px;
+                line-height: 1.5;
+            }
+
+            &-methods {
+                min-height: 145px;
+                margin-bottom: 20px;
+            }
+        }
+
+        &-row {
+            @include row('', center);
+
+            & + & {
+                margin-top: 5px;
+            }
+
+            & + &._total {
+                margin-top: 25px;
+            }
+
+            &._total {
+                @include row('', baseline);
+                margin-bottom: 30px;
+            }
+
+            .radio {
+                flex-shrink: 0;
+            }
+
+            .dots-separator {
+                margin-top: 8px;
+            }
+        }
+
+        &-row & {
+
+            &-char,
+            &-price {
+                flex-shrink: 0;
+            }
+        }
+
+        &-row._total & {
+
+            &-price {
+                @include calibri-bold;
+                width: auto;
+                padding-left: 15px;
+                font-size: 32px;
+
+                &-currency {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        &-char {
+            color: $orange;
+            font-size: 17px;
+        }
+
+        &-price {
+            width: 80px;
+            flex-shrink: 0;
+            font-size: 17px;
+            color: $white;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        &-actions {
+            width: 100%;
+
+            .button {
+                width: 100%;
+            }
+
+            .button + .button {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &._empty &__info {
+        @include column(flex-start, space-between);
+    }
+
+    &__collapsed {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        width: 250px;
+        height: 72px;
+        padding: 20px 0 15px 33px;
+        background-color: $orange-bright;
+        cursor: pointer;
+
+        &-row {
+            @include row('', center)
+        }
+
+        &-icon {
+            position: relative;
+            top: -4px;
+            width: 43px;
+            height: 38px;
+            display: inline-block;
+            margin-right: 20px;
+            @include bg-image('icons/cart.png');
+            background-repeat: no-repeat;
+            background-size: 32px 29px;
+            background-position: left bottom;
+
+            &-count {
+                position: absolute;
+                top: 0;
+                right: 0;
+                @include row(center, center);
+                width: 21px;
+                height: 21px;
+                border: 2px solid $orange-bright;
+                border-radius: 100%;
+                background-color: $white;
+                box-sizing: content-box;
+                @include calibri-bold;
+                color: $orange-bright;
+            }
+        }
+
+        &-price {
+            color: $white;
+            @include calibri-bold;
+            font-size: 32px;
+
+            &-currency {
+                font-size: 18.5px;
+            }
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+}
