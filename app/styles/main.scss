@@ -8,6 +8,7 @@
 // Partials imports
 
 @import "partials/jquery-ui";
+@import "partials/magnific-popup";
 @import "partials/owl-carousel";
 @import "partials/slick";
 
@@ -18,7 +19,9 @@
 @import "shared/dots-separator";
 @import "shared/input";
 @import "shared/link";
+@import "shared/popup";
 @import "shared/radio";
+@import "shared/textarea";
 @import "shared/title";
 
 // Components imports
@@ -36,3 +39,4 @@
 @import "components/product";
 @import "components/recommended";
 @import "components/showcase";
+

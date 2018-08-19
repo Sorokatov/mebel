@@ -2,6 +2,7 @@
     @include inline-row(flex-start, center);
     transition: $transition-time color;
     color: $color-text;
+    cursor: pointer;
 
     &__icon {
         display: inline-block;
