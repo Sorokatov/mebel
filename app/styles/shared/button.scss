@@ -37,4 +37,109 @@
             border-color: $orange-bright;
         }
     }
+
+    &._loading {
+        pointer-events: none;
+    }
+
+    &__loader {
+        position: relative;
+        top: -1px;
+        display: none;
+
+        &-item {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            margin-right: 13px;
+            border-radius: 100%;
+            background-color: $white;
+            transform: scale(1);
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+
+            &:first-child {
+                animation-name: loader-item-1;
+            }
+
+            &:nth-child(2) {
+                animation-name: loader-item-2;
+            }
+
+            &:nth-child(3) {
+                animation-name: loader-item-3;
+            }
+
+            &:nth-child(4) {
+                animation-name: loader-item-4;
+            }
+        }
+    }
+
+
+    &._loading & {
+
+        &__text {
+            display: none;
+        }
+
+        &__loader {
+            @include inline-row();
+        }
+    }
+}
+
+@keyframes loader-item-1 {
+
+    0%,
+    100% {
+        transform: scale(0);
+    }
+
+    20%,
+    90% {
+        transform: scale(1);
+    }
+}
+
+@keyframes loader-item-2 {
+
+    0%,
+    30%,
+    100% {
+        transform: scale(0);
+    }
+
+    40%,
+    90% {
+        transform: scale(1);
+    }
+}
+
+@keyframes loader-item-3 {
+
+     0%,
+     50%,
+     100% {
+         transform: scale(0);
+     }
+
+     60%,
+     90% {
+         transform: scale(1);
+     }
+ }
+
+@keyframes loader-item-4 {
+
+    0%,
+    70%,
+    100% {
+        transform: scale(0);
+    }
+
+    80%,
+    90% {
+        transform: scale(1);
+    }
 }

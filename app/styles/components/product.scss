@@ -234,8 +234,13 @@
                 @include row('', center);
                 margin-bottom: 12px;
 
-                span {
+                & > span {
                     margin-left: 6px;
+                }
+
+                .hint__wrap {
+                    @include inline-row();
+                    margin-left: 18px;
                 }
             }
 
@@ -243,7 +248,6 @@
                 display: inline-block;
                 width: 16px;
                 height: 16px;
-                margin-left: 18px;
                 border: 1px solid $breadcrumb-gray;
                 border-radius: 100%;
                 font-size: 13px;
@@ -251,6 +255,14 @@
                 color: $breadcrumb-gray;
                 @include calibri-bold;
                 cursor: pointer;
+                transition: $transition-time all;
+
+
+                &:hover,
+                ._active & {
+                    border-color: $orange-bright;
+                    color: $orange-bright;
+                }
             }
 
             &-content {
@@ -591,12 +603,17 @@
             background-repeat: repeat-x;
 
             &-content {
-                @include row(space-between);
+                @include row();
                 margin-bottom: 40px;
             }
 
             &-item {
                 width: 333px;
+                margin-right: calc((100% - (333px * 3)) / 2);
+
+                &:nth-child(3n) {
+                    margin-right: 0;
+                }
 
                 &-text {
                     position: relative;
@@ -659,6 +676,11 @@
 
                     &._next {
                         transform: scale(-1, 1);
+                    }
+
+                    &._disabled {
+                        opacity: .5;
+                        pointer-events: none;
                     }
 
                     &:hover {

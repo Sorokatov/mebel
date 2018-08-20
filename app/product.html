@@ -105,9 +105,19 @@
                         <div class="product-page__constructor-block">
                             <div class="product-page__constructor-label">
                                 Размер, мм
-                                <i class="product-page__constructor-help">
-                                    ?
-                                </i>
+                                <div class="hint__wrap js-size-hint-wrap">
+                                    <i class="product-page__constructor-help js-size-hint-open">?</i>
+                                    <div class="hint">
+                                        <svg class="hint__close js-size-hint-close" width="12px" height="11px">
+                                            <path d="M11.418,9.326 L9.983,10.761 L6.155,6.933 L2.328,10.761 L0.892,9.326 L4.720,5.498 L0.892,1.671 L2.328,0.235 L6.155,4.063 L9.983,0.235 L11.418,1.671 L7.591,5.498 L11.418,9.326 Z"/>
+                                        </svg>
+                                        <span class="hint__content">
+                                            Выберите размер, кликнув на число.
+                                            Размер влияет на стоимость.
+                                        </span>
+                                        <span class="hint__arrow"></span>
+                                    </div>
+                                </div>
                             </div>
                             <div class="product-page__constructor-sizes">
                                 <div class="product-page__constructor-sizes-row">
@@ -385,45 +395,104 @@
 
         <div class="product-page__responses">
             <h2 class="product-page__title">Отзывы</h2>
-            <div class="product-page__responses-content">
-                <div class="product-page__responses-item">
-                    <div class="product-page__responses-item-text _collapsed">
+            <div class="product-page__responses-content js-responses">
+                <div class="product-page__responses-item js-responses-item">
+                    <div class="product-page__responses-item-text js-responses-item-text">
                         Мастера приветливые, все подняли на четвертый этаж,
                         собрали шкаф но из-за нового щитка он не поместился в нишу.
                         Пришлось подрезать стенку, сделали акуратно.
                         Отдельное спасибо дизайнеру что отговорил сделать
                     </div>
-                    <a href="#" class="link _color-orange _font-sm">
-                        <span class="link__text">Читать полностью</span>
+                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
+                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
+                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
                     </a>
                     <span class="product-page__responses-author">Светлана</span>
                 </div>
-                <div class="product-page__responses-item">
-                    <div class="product-page__responses-item-text">
+                <div class="product-page__responses-item js-responses-item ">
+                    <div class="product-page__responses-item-text js-responses-item-text">
                         Шустрые сборщики, никаких вопросов, много мусора, но за собой убрали )
                     </div>
+                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
+                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
+                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
+                    </a>
                     <span class="product-page__responses-author">Анна</span>
                 </div>
-                <div class="product-page__responses-item">
-                    <div class="product-page__responses-item-text">
+                <div class="product-page__responses-item js-responses-item">
+                    <div class="product-page__responses-item-text js-responses-item-text">
                         Заказывала шкаф купе, предыдущий покупала
                         в сетевом магазине но он не продержался и трех лет.
                         Новый шкаф выглядит отлично и создает впечатление
                         качественого и крепкого. Надеюсь прослужит не один год.
                         Спасибо за работу.
                     </div>
+                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
+                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
+                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
+                    </a>
                     <span class="product-page__responses-author">Татьяна</span>
+                </div>
+                <div class="product-page__responses-item js-responses-item">
+                    <div class="product-page__responses-item-text js-responses-item-text">
+                        Мастера приветливые, все подняли на четвертый этаж,
+                        собрали шкаф но из-за нового щитка он не поместился в нишу.
+                        Пришлось подрезать стенку, сделали акуратно.
+                        Отдельное спасибо дизайнеру что отговорил сделать
+                    </div>
+                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
+                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
+                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
+                    </a>
+                    <span class="product-page__responses-author">Светлана 2</span>
+                </div>
+                <div class="product-page__responses-item js-responses-item ">
+                    <div class="product-page__responses-item-text js-responses-item-text">
+                        Шустрые сборщики, никаких вопросов, много мусора, но за собой убрали )
+                    </div>
+                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
+                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
+                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
+                    </a>
+                    <span class="product-page__responses-author">Анна 2</span>
+                </div>
+                <div class="product-page__responses-item js-responses-item">
+                    <div class="product-page__responses-item-text js-responses-item-text">
+                        Заказывала шкаф купе, предыдущий покупала
+                        в сетевом магазине но он не продержался и трех лет.
+                        Новый шкаф выглядит отлично и создает впечатление
+                        качественого и крепкого. Надеюсь прослужит не один год.
+                        Спасибо за работу.
+                    </div>
+                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
+                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
+                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
+                    </a>
+                    <span class="product-page__responses-author">Татьяна 2</span>
+                </div>
+                <div class="product-page__responses-item js-responses-item">
+                    <div class="product-page__responses-item-text js-responses-item-text">
+                        Мастера приветливые, все подняли на четвертый этаж,
+                        собрали шкаф но из-за нового щитка он не поместился в нишу.
+                        Пришлось подрезать стенку, сделали акуратно.
+                        Отдельное спасибо дизайнеру что отговорил сделать
+                    </div>
+                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
+                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
+                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
+                    </a>
+                    <span class="product-page__responses-author">Светлана 3</span>
                 </div>
             </div>
             <div class="product-page__responses-controls">
                 <a href="#mfp-response" class="button _inverted js-popup-toggle">Написать Отзыв</a>
-                <div class="product-page__responses-nav">
-                    <a href="#" class="product-page__responses-nav-item _prev">
+                <div class="product-page__responses-nav _hidden js-responses-nav">
+                    <a href="#" class="product-page__responses-nav-item _disabled _prev js-responses-nav-item" data-action="prev">
                         <svg class="product-page__responses-nav-icon" width="7px" height="12px">
                             <path d="M7.000,9.485 L2.919,5.999 L7.000,2.513 L7.000,0.006 L-0.014,5.999 L7.000,11.991 L7.000,9.485 Z"/>
                         </svg>
                     </a>
-                    <a href="#" class="product-page__responses-nav-item _next">
+                    <a href="#" class="product-page__responses-nav-item _next js-responses-nav-item" data-action="next">
                         <svg class="product-page__responses-nav-icon" width="7px" height="12px">
                             <path d="M7.000,9.485 L2.919,5.999 L7.000,2.513 L7.000,0.006 L-0.014,5.999 L7.000,11.991 L7.000,9.485 Z"/>
                         </svg>
@@ -513,13 +582,14 @@
     </div>
 </div>
 
+
 <div class="recommended">
     <div class="recommended__container container">
         <div class="recommended__title">
             <h2 class="title">Похожие товары</h2>
         </div>
         <div class="recommended__items">
-            <div class="product">
+            <a class="product" href="/product.html">
                 <div class="product__content">
                     <div class="product__image-wrap">
                         <img class="product__image" src="images/product-2.jpg" alt="product-2">
@@ -531,62 +601,62 @@
                     </h3>
                     <div class="product__colors">
                         <div class="product__colors-category">
-                                    <span class="product__color">
-                                        <img src="images/colors/col-1.jpg" alt="col-1">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-2.jpg" alt="col-2">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-3.jpg" alt="col-3">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-4.jpg" alt="col-4">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-5.jpg" alt="col-5">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-6.jpg" alt="col-6">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-7.jpg" alt="col-7">
-                                    </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-1.jpg" alt="col-1">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-2.jpg" alt="col-2">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-3.jpg" alt="col-3">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-4.jpg" alt="col-4">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-5.jpg" alt="col-5">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-6.jpg" alt="col-6">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-7.jpg" alt="col-7">
+                            </span>
                             <span class="product__color-more"></span>
                         </div>
                         <div class="product__colors-category _sm">
-                                    <span class="product__color">
-                                        <img src="images/colors/col-8.jpg" alt="col-8">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-9.jpg" alt="col-9">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-10.jpg" alt="col-10">
-                                    </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-8.jpg" alt="col-8">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-9.jpg" alt="col-9">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-10.jpg" alt="col-10">
+                            </span>
                         </div>
                         <div class="product__colors-category">
-                                    <span class="product__color">
-                                        <img src="images/colors/col-11.jpg" alt="col-11">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-12.jpg" alt="col-12">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-13.jpg" alt="col-13">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-14.jpg" alt="col-14">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-15.jpg" alt="col-15">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-16.jpg" alt="col-16">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-17.jpg" alt="col-17">
-                                    </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-11.jpg" alt="col-11">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-12.jpg" alt="col-12">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-13.jpg" alt="col-13">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-14.jpg" alt="col-14">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-15.jpg" alt="col-15">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-16.jpg" alt="col-16">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-17.jpg" alt="col-17">
+                            </span>
                             <span class="product__color-more"></span>
                         </div>
                     </div>
@@ -597,8 +667,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="product">
+            </a>
+            <a href="/catalogue.html" class="product">
                 <div class="product__content">
                     <div class="product__image-wrap">
                         <img class="product__image" src="images/product-1.jpg" alt="product-1">
@@ -609,41 +679,41 @@
                     </h3>
                     <div class="product__colors">
                         <div class="product__colors-category">
-                                    <span class="product__color">
-                                        <img src="images/colors/col-1.jpg" alt="col-1">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-2.jpg" alt="col-2">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-3.jpg" alt="col-3">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-4.jpg" alt="col-4">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-5.jpg" alt="col-5">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-6.jpg" alt="col-6">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-7.jpg" alt="col-7">
-                                    </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-1.jpg" alt="col-1">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-2.jpg" alt="col-2">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-3.jpg" alt="col-3">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-4.jpg" alt="col-4">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-5.jpg" alt="col-5">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-6.jpg" alt="col-6">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-7.jpg" alt="col-7">
+                            </span>
                             <span class="product__color-more"></span>
                         </div>
                         <div class="product__colors-category _sm">
-                                    <span class="product__color">
-                                        <img src="images/colors/col-8.jpg" alt="col-8">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-9.jpg" alt="col-9">
-                                    </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-8.jpg" alt="col-8">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-9.jpg" alt="col-9">
+                            </span>
                         </div>
                         <div class="product__colors-category">
-                                    <span class="product__color">
-                                        <img src="images/colors/col-11.jpg" alt="col-11">
-                                    </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-11.jpg" alt="col-11">
+                            </span>
                         </div>
                     </div>
                     <div class="price__wrap">
@@ -654,8 +724,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="product">
+            </a>
+            <a href="/catalogue.html" class="product">
                 <div class="product__content">
                     <div class="product__image-wrap">
                         <img class="product__image" src="images/product-2.jpg" alt="product-2">
@@ -666,39 +736,39 @@
                     </h3>
                     <div class="product__colors">
                         <div class="product__colors-category">
-                                        <span class="product__color">
-                                            <img src="images/colors/col-1.jpg" alt="col-1">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-2.jpg" alt="col-2">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-3.jpg" alt="col-3">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-4.jpg" alt="col-4">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-5.jpg" alt="col-5">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-6.jpg" alt="col-6">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-7.jpg" alt="col-7">
-                                        </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-1.jpg" alt="col-1">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-2.jpg" alt="col-2">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-3.jpg" alt="col-3">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-4.jpg" alt="col-4">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-5.jpg" alt="col-5">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-6.jpg" alt="col-6">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-7.jpg" alt="col-7">
+                            </span>
                             <span class="product__color-more"></span>
                         </div>
                         <div class="product__colors-category _sm">
-                                        <span class="product__color">
-                                            <img src="images/colors/col-8.jpg" alt="col-8">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-9.jpg" alt="col-9">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-10.jpg" alt="col-10">
-                                        </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-8.jpg" alt="col-8">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-9.jpg" alt="col-9">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-10.jpg" alt="col-10">
+                            </span>
                         </div>
                     </div>
                     <div class="price__wrap">
@@ -710,8 +780,8 @@
                         <span class="price__label">Продано</span>
                     </div>
                 </div>
-            </div>
-            <div class="product">
+            </a>
+            <a href="/catalogue.html" class="product">
                 <div class="product__content">
                     <div class="product__image-wrap">
                         <img class="product__image" src="images/product-2.jpg" alt="product-2">
@@ -723,62 +793,62 @@
                     </h3>
                     <div class="product__colors">
                         <div class="product__colors-category">
-                                        <span class="product__color">
-                                            <img src="images/colors/col-1.jpg" alt="col-1">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-2.jpg" alt="col-2">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-3.jpg" alt="col-3">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-4.jpg" alt="col-4">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-5.jpg" alt="col-5">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-6.jpg" alt="col-6">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-7.jpg" alt="col-7">
-                                        </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-1.jpg" alt="col-1">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-2.jpg" alt="col-2">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-3.jpg" alt="col-3">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-4.jpg" alt="col-4">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-5.jpg" alt="col-5">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-6.jpg" alt="col-6">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-7.jpg" alt="col-7">
+                            </span>
                             <span class="product__color-more"></span>
                         </div>
                         <div class="product__colors-category _sm">
-                                        <span class="product__color">
-                                            <img src="images/colors/col-8.jpg" alt="col-8">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-9.jpg" alt="col-9">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-10.jpg" alt="col-10">
-                                        </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-8.jpg" alt="col-8">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-9.jpg" alt="col-9">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-10.jpg" alt="col-10">
+                            </span>
                         </div>
                         <div class="product__colors-category">
-                                        <span class="product__color">
-                                            <img src="images/colors/col-11.jpg" alt="col-11">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-12.jpg" alt="col-12">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-13.jpg" alt="col-13">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-14.jpg" alt="col-14">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-15.jpg" alt="col-15">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-16.jpg" alt="col-16">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-17.jpg" alt="col-17">
-                                        </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-11.jpg" alt="col-11">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-12.jpg" alt="col-12">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-13.jpg" alt="col-13">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-14.jpg" alt="col-14">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-15.jpg" alt="col-15">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-16.jpg" alt="col-16">
+                            </span>
+                            <span class="product__color js-color-link">
+                                <img src="images/colors/col-17.jpg" alt="col-17">
+                            </span>
                             <span class="product__color-more"></span>
                         </div>
                     </div>
@@ -789,7 +859,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </div>

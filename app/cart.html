@@ -309,7 +309,15 @@
             <div class="cart__info-title">Оформление заказа</div>
             <div class="cart__info-phone">
                 <label class="cart__info-phone-label">Ваш телефон</label>
-                <input class="input" type="text">
+                <div class="hint__wrap _error">
+                    <input class="input" type="text">
+                    <div class="hint">
+                        <span class="hint__content">
+                            Вы не указали номер телефона
+                        </span>
+                        <span class="hint__arrow"></span>
+                    </div>
+                </div>
             </div>
             <div class="cart__info-delivery">
                 <span class="cart__info-delivery-label">Доставка в:</span>
@@ -383,7 +391,17 @@
             </div>
         </div>
         <div class="cart__info-actions">
-            <button class="button">Оформить заказ</button>
+            <button class="button _loading">
+                <span class="button__text">
+                    Оформить заказ
+                </span>
+                <span class="button__loader">
+                    <span class="button__loader-item"></span>
+                    <span class="button__loader-item"></span>
+                    <span class="button__loader-item"></span>
+                    <span class="button__loader-item"></span>
+                </span>
+            </button>
             <button class="button _inverted cart__continue">Продолжить покупки</button>
         </div>
     </div>

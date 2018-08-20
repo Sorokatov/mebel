@@ -31,14 +31,10 @@
             height: 17px;
             background-color: transparent;
         }
+    }
 
-        &__close-icon {
-            pointer-events: auto;
-
-            &:hover {
-                fill: $orange-bright;
-            }
-        }
+    &._bg-black &__close:hover &__close-icon {
+        fill: $orange-bright;
     }
 
     .mfp-ready & {
@@ -180,6 +176,24 @@
         &-action {
             margin-top: 35px;
         }
+    }
+
+    &__success {
+        @include column(center);
+        margin: 20px 20px 20px 0;
+        border: 2px solid $orange-bright;
+        padding: 80px 50px 90px;
+
+        &-title {
+            margin-bottom: 25px;
+            @include roboto-bold;
+            font-size: 32px;
+        }
+
+        &-text {
+            text-align: center;
+        }
+
     }
 
 }

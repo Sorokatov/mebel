@@ -5,4 +5,10 @@
     @include calibri-light;
     font-size: 18.5px;
     line-height: 1;
+
+    &._error,
+    ._error & {
+        border-color: $orange-bright;
+        box-shadow: inset 0 0 0 1px $orange-bright;
+    }
 }

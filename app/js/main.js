@@ -5,7 +5,9 @@
     var app = {
 
         CONSTANTS: {
-            filtersItemThreshold: 4
+            filtersItemThreshold: 4,
+            responseSymbolThreshold: 180,
+            responsesCountThreshold: 3
         },
 
         SELECTORS: {
@@ -36,13 +38,26 @@
             constructorNewImg: '.js-constructor-new-img',
             popupToggle: '.js-popup-toggle',
             popup: 'js-popup',
-            popupClose: '.js-close-popup'
+            popupClose: '.js-close-popup',
+            responsesContainer: '.js-responses',
+            responsesItem: '.js-responses-item',
+            responsesItemText: '.js-responses-item-text',
+            responsesItemToggle: '.js-responses-toggle',
+            responsesItemToggleText: '.js-responses-toggle-text',
+            responsesNav: '.js-responses-nav',
+            responsesNavItem: '.js-responses-nav-item',
+            responsesSendButton: '.js-response-send',
+            sizeHintWrap: '.js-size-hint-wrap',
+            sizeHintOpen: '.js-size-hint-open',
+            sizeHintClose: '.js-size-hint-close'
         },
 
         CLASSES: {
             hidden: '_hidden',
             open: '_open',
-            active: '_active'
+            active: '_active',
+            collapsed: '_collapsed',
+            disabled: '_disabled'
         },
 
         init: function () {
@@ -52,7 +67,9 @@
             this.initPopups();
             this.initSelectmenu();
             this.initFiltersCount();
+            this.initResponsesVisibility();
             this.initPhoneMask();
+            this.showSizesHintInSession();
         },
 
         initEventListeners: function () {
@@ -65,7 +82,11 @@
             $(document).on('keypress', this.SELECTORS.sizeInput, this.checkSizeInputValue.bind(this));
             $(document).on('click', this.SELECTORS.constructorButton, this.changeConstructorValue.bind(this));
             $(document).on('click', this.SELECTORS.popupClose, this.closePopup);
-            $(document).on('click', this.SELECTORS.constructorImage, this.selectImageFromPopup.bind(this))
+            $(document).on('click', this.SELECTORS.constructorImage, this.selectImageFromPopup.bind(this));
+            $(document).on('click', this.SELECTORS.responsesItemToggle, this.toggleResponseVisibility.bind(this));
+            $(document).on('click', this.SELECTORS.responsesNavItem, this.handleResponseNavAction.bind(this));
+            $(document).on('click', this.SELECTORS.responsesSendButton, this.sendResponse.bind(this));
+            $(document).on('click', this.SELECTORS.sizeHintOpen + ', ' + this.SELECTORS.sizeHintClose, this.toggleSizeHintVisibility.bind(this));
         },
 
         initSelectmenu: function () {
@@ -255,6 +276,103 @@
 
         closePopup: function () {
             $.magnificPopup.close();
+        },
+
+        initResponsesVisibility: function () {
+            var $responses = $(this.SELECTORS.responsesContainer).find(this.SELECTORS.responsesItem);
+
+            if ($responses.length) {
+
+                $.each($responses, function (index, value) {
+                    var $self = $(value),
+                        textLength = $self.find(this.SELECTORS.responsesItemText).text().replace(/\s+/g," ").length;
+
+                    if (textLength > this.CONSTANTS.responseSymbolThreshold) {
+                        $self.find(this.SELECTORS.responsesItemText).addClass(this.CLASSES.collapsed);
+                        $self.find(this.SELECTORS.responsesItemToggle).removeClass(this.CLASSES.hidden);
+                    }
+
+                    if (index >= this.CONSTANTS.responsesCountThreshold) $self.addClass(this.CLASSES.hidden);
+
+                }.bind(this));
+            }
+
+            if ($responses.length > this.CONSTANTS.responsesCountThreshold) $(this.SELECTORS.responsesNav).removeClass(this.CLASSES.hidden);
+        },
+
+        toggleResponseVisibility: function (event) {
+            var $self = $(event.currentTarget);
+
+            event.preventDefault();
+            $self.find(this.SELECTORS.responsesItemToggleText).toggleClass(this.CLASSES.hidden);
+            $self.closest(this.SELECTORS.responsesItem)
+                .find(this.SELECTORS.responsesItemText)
+                .toggleClass(this.CLASSES.collapsed);
+        },
+
+        handleResponseNavAction: function (event) {
+            var $self = $(event.currentTarget),
+                $responses = $(this.SELECTORS.responsesItem),
+                responsesThreshold = this.CONSTANTS.responsesCountThreshold,
+                action = $self.data('action'),
+                lastVisibleIndex,
+                firstVisibleIndex,
+                activeResponses;
+
+            event.preventDefault();
+
+            if (action === 'next') {
+                var restOfResponses;
+
+                $(this.SELECTORS.responsesNavItem + '[data-action="prev"]').removeClass(this.CLASSES.disabled);
+                $.each($responses, function (index, value) {
+                    if (!$(value).hasClass(this.CLASSES.hidden)) lastVisibleIndex = index + 1;
+                }.bind(this));
+                restOfResponses = $responses.length - lastVisibleIndex;
+
+                if (restOfResponses > responsesThreshold) {
+                    activeResponses = $responses.slice(lastVisibleIndex, lastVisibleIndex + responsesThreshold);
+
+                } else if (restOfResponses <= responsesThreshold && restOfResponses !==0) {
+                    activeResponses = $responses.slice(lastVisibleIndex);
+                    $self.addClass(this.CLASSES.disabled);
+                }
+
+            } else {
+                $(this.SELECTORS.responsesNavItem + '[data-action="next"]').removeClass(this.CLASSES.disabled);
+                $.each($responses, function (index, value) {
+                    if (!$(value).hasClass(this.CLASSES.hidden)) {
+                        firstVisibleIndex = index;
+                        return false;
+                    }
+                }.bind(this));
+
+                if (firstVisibleIndex > responsesThreshold) {
+                    activeResponses = $responses.slice(firstVisibleIndex - responsesThreshold, firstVisibleIndex);
+                } else {
+                    activeResponses = $responses.slice(0, responsesThreshold);
+                    $self.addClass(this.CLASSES.disabled);
+                }
+            }
+
+            $responses.addClass(this.CLASSES.hidden);
+            activeResponses.removeClass(this.CLASSES.hidden);
+        },
+
+        sendResponse: function () {
+            this.closePopup();
+        },
+
+        toggleSizeHintVisibility: function (event) {
+            $(event.currentTarget).closest(this.SELECTORS.sizeHintWrap).toggleClass(this.CLASSES.active);
+        },
+
+        showSizesHintInSession: function () {
+
+            if (!sessionStorage.getItem('sizesHintWasShown')) {
+                $(this.SELECTORS.sizeHintWrap).addClass(this.CLASSES.active);
+                sessionStorage.setItem('sizesHintWasShown', 'true');
+            }
         }
     };
 
