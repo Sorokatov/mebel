@@ -15,6 +15,7 @@
 }
 
 .lg-actions .lg-next, .lg-actions .lg-prev {
+  position: relative;
   background-color: rgba(0, 0, 0, 0.45);
   border-radius: 2px;
   color: #999;
@@ -22,7 +23,8 @@
   display: block;
   font-size: 22px;
   margin-top: -10px;
-  padding: 8px 10px 9px;
+  width: 50px;
+  height: 50px;
   position: absolute;
   top: 50%;
   z-index: 1080;
@@ -37,16 +39,27 @@
   color: #FFF;
 }
 .lg-actions .lg-next {
-  right: 20px;
+  right: 0;
 }
-.lg-actions .lg-next:before {
-  content: "\e095";
-}
-.lg-actions .lg-prev {
-  left: 20px;
-}
+.lg-actions .lg-next:before,
 .lg-actions .lg-prev:after {
-  content: "\e094";
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7px;
+  margin-top: -6px;
+  margin-left: -3.5px;
+  height: 12px;
+  @include bg-image("icons/gallery-arrow.png");
+}
+
+.lg-actions .lg-prev {
+  left: 0;
+}
+
+.lg-actions .lg-prev:after {
+  transform: scale(-1, 1);
 }
 
 @-webkit-keyframes lg-right-end {
@@ -156,29 +169,37 @@
   position: absolute;
   top: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.45);
 }
 .lg-toolbar .lg-icon {
   color: #999;
+  position: relative;
   cursor: pointer;
   float: right;
-  font-size: 24px;
-  height: 47px;
-  line-height: 27px;
-  padding: 10px 0;
+  height: 50px;
   text-align: center;
   width: 50px;
   text-decoration: none !important;
-  outline: medium none;
-  -webkit-transition: color 0.2s linear;
-  -o-transition: color 0.2s linear;
-  transition: color 0.2s linear;
+  background-color: $orange-bright;
+  transition: all $transition-time linear;
+
+  &:hover {
+      background-color: $red;
+  }
 }
 .lg-toolbar .lg-icon:hover {
   color: #FFF;
 }
 .lg-toolbar .lg-close:after {
-  content: "\e070";
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  margin-left: -8px;
+  @include bg-image('icons/close-white.png');
+  background-size: cover;
 }
 .lg-toolbar .lg-download:after {
   content: "\e0f2";
@@ -207,9 +228,10 @@
 }
 
 #lg-counter {
-  color: #999;
+  color: #b8b8b8;
+  @include calibri-bold;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   padding-left: 20px;
   padding-top: 12px;
   vertical-align: middle;
@@ -822,7 +844,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   white-space: nowrap;
 }
 .lg-outer .lg-item {
-  background: url("../img/loading.gif") no-repeat scroll center center transparent;
+  background: url("../images/loading.gif") no-repeat scroll center center transparent;
   display: none !important;
 }
 .lg-outer.lg-css3 .lg-prev-slide, .lg-outer.lg-css3 .lg-current, .lg-outer.lg-css3 .lg-next-slide {

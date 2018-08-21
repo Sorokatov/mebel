@@ -1,0 +1,46 @@
+.tooltip {
+
+    &__wrap {
+        position: relative;
+    }
+
+    &__wrap._active & {
+        opacity: 1;
+        pointer-events: auto;
+        bottom: -60px;
+    }
+
+    position: absolute;
+    bottom: -30px;
+    left: -10px;
+    @include column(center);
+    width: 430px;
+    padding: 40px 0;
+    background-color: $white;
+    transform: translateY(100%);
+    z-index: 2;
+    box-shadow: 0 0 46px 0 rgba(0, 0, 0, 0.43);
+    pointer-events: none;
+    opacity: 0;
+    transition: $transition-time all;
+    backface-visibility: hidden;
+
+    &__content {
+        max-width: 230px;
+        text-align: center;
+    }
+
+    &__actions {
+        margin-top: 40px;
+        @include row(space-between);
+
+        .button {
+            min-width: 150px;
+            text-transform: uppercase;
+        }
+
+        .button + .button {
+            margin-left: 10px;
+        }
+    }
+}

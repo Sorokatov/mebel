@@ -65,7 +65,7 @@
         }
 
         &-title {
-            @include row();
+            @include row('', flex-start);
             margin-bottom: 30px;
 
             &-text {

@@ -46,11 +46,16 @@
             responsesItemToggleText: '.js-responses-toggle-text',
             responsesNav: '.js-responses-nav',
             responsesNavItem: '.js-responses-nav-item',
-            responsesSendButton: '.js-response-send',
+            responsesSendButton: '.js-send-response',
             sizeHintWrap: '.js-size-hint-wrap',
             sizeHintOpen: '.js-size-hint-open',
             sizeHintClose: '.js-size-hint-close',
-            productGallery: '.js-product-gallery'
+            productGallery: '.js-product-gallery',
+            productGalleryThumb: '.js-product-gallery-thumb',
+            productGalleryImg: '.js-product-gallery-img',
+            deleteItemButton: '.js-delete-item',
+            deleteItemTooltip: '.js-delete-item-tooltip',
+            deleteItemAction: '.js-delete-item-action'
         },
 
         CLASSES: {
@@ -89,6 +94,9 @@
             $(document).on('click', this.SELECTORS.responsesNavItem, this.handleResponseNavAction.bind(this));
             $(document).on('click', this.SELECTORS.responsesSendButton, this.sendResponse.bind(this));
             $(document).on('click', this.SELECTORS.sizeHintOpen + ', ' + this.SELECTORS.sizeHintClose, this.toggleSizeHintVisibility.bind(this));
+            $(document).on('click', this.SELECTORS.productGalleryThumb, this.changeGalleryImg.bind(this));
+            $(document).on('click', this.SELECTORS.deleteItemButton, this.showDeleteTooltip.bind(this));
+            $(document).on('click', this.SELECTORS.deleteItemAction, this.closeDeleteTooltip.bind(this));
         },
 
         initSelectmenu: function () {
@@ -374,7 +382,12 @@
         },
 
         sendResponse: function () {
-            this.closePopup();
+            $.magnificPopup.open({
+                items: {
+                    src: '#mfp-response-success'
+                },
+                type: 'inline'
+            })
         },
 
         toggleSizeHintVisibility: function (event) {
@@ -387,6 +400,26 @@
                 $(this.SELECTORS.sizeHintWrap).addClass(this.CLASSES.active);
                 sessionStorage.setItem('sizesHintWasShown', 'true');
             }
+        },
+
+        changeGalleryImg: function (event) {
+            var $self = $(event.currentTarget),
+                imgId = $self.data('img-id'),
+                $gallery = $(this.SELECTORS.productGallery);
+
+            event.preventDefault();
+            $(this.SELECTORS.productGalleryThumb).removeClass(this.CLASSES.active);
+            $self.addClass(this.CLASSES.active);
+            $gallery.find(this.SELECTORS.productGalleryImg).removeClass(this.CLASSES.active);
+            $gallery.find(this.SELECTORS.productGalleryImg + '[data-img-id="'+imgId+'"]').addClass(this.CLASSES.active);
+        },
+
+        showDeleteTooltip: function (event) {
+            $(event.currentTarget).closest(this.SELECTORS.deleteItemTooltip).addClass(this.CLASSES.active);
+        },
+
+        closeDeleteTooltip: function (event) {
+            $(event.currentTarget).closest(this.SELECTORS.deleteItemTooltip).removeClass(this.CLASSES.active);
         }
     };
 
