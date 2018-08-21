@@ -49,7 +49,8 @@
             responsesSendButton: '.js-response-send',
             sizeHintWrap: '.js-size-hint-wrap',
             sizeHintOpen: '.js-size-hint-open',
-            sizeHintClose: '.js-size-hint-close'
+            sizeHintClose: '.js-size-hint-close',
+            productGallery: '.js-product-gallery'
         },
 
         CLASSES: {
@@ -64,6 +65,7 @@
             this.initEventListeners();
             this.initParallax();
             this.initSlider();
+            this.initGallery();
             this.initPopups();
             this.initSelectmenu();
             this.initFiltersCount();
@@ -121,6 +123,18 @@
                 midClick: true,
                 removalDelay: 300
             })
+        },
+
+        initGallery: function () {
+            var $gallery = $(this.SELECTORS.productGallery);
+
+            if ($gallery.length) {
+
+                $gallery.lightGallery({
+                    getCaptionFromTitleOrAlt: false,
+                    download: false
+                })
+            }
         },
 
         initFiltersCount: function () {
@@ -317,7 +331,7 @@
                 action = $self.data('action'),
                 lastVisibleIndex,
                 firstVisibleIndex,
-                activeResponses;
+                $activeResponses;
 
             event.preventDefault();
 
@@ -331,10 +345,10 @@
                 restOfResponses = $responses.length - lastVisibleIndex;
 
                 if (restOfResponses > responsesThreshold) {
-                    activeResponses = $responses.slice(lastVisibleIndex, lastVisibleIndex + responsesThreshold);
+                    $activeResponses = $responses.slice(lastVisibleIndex, lastVisibleIndex + responsesThreshold);
 
                 } else if (restOfResponses <= responsesThreshold && restOfResponses !==0) {
-                    activeResponses = $responses.slice(lastVisibleIndex);
+                    $activeResponses = $responses.slice(lastVisibleIndex);
                     $self.addClass(this.CLASSES.disabled);
                 }
 
@@ -348,15 +362,15 @@
                 }.bind(this));
 
                 if (firstVisibleIndex > responsesThreshold) {
-                    activeResponses = $responses.slice(firstVisibleIndex - responsesThreshold, firstVisibleIndex);
+                    $activeResponses = $responses.slice(firstVisibleIndex - responsesThreshold, firstVisibleIndex);
                 } else {
-                    activeResponses = $responses.slice(0, responsesThreshold);
+                    $activeResponses = $responses.slice(0, responsesThreshold);
                     $self.addClass(this.CLASSES.disabled);
                 }
             }
 
             $responses.addClass(this.CLASSES.hidden);
-            activeResponses.removeClass(this.CLASSES.hidden);
+            $activeResponses.removeClass(this.CLASSES.hidden);
         },
 
         sendResponse: function () {
@@ -369,7 +383,7 @@
 
         showSizesHintInSession: function () {
 
-            if (!sessionStorage.getItem('sizesHintWasShown')) {
+            if (!sessionStorage.getItem('sizesHintWasShown') && $(this.SELECTORS.sizeHintWrap).length) {
                 $(this.SELECTORS.sizeHintWrap).addClass(this.CLASSES.active);
                 sessionStorage.setItem('sizesHintWasShown', 'true');
             }

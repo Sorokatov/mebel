@@ -12,14 +12,14 @@ const gulp = require('gulp'),
             templates: 'app/*.html',
             scripts: 'app/js/*.js',
             images: 'app/images/**/*',
-            fonts: 'app/fonts/*'
+            fonts: 'app/fonts/**/*'
         },
         watch: {
             styles: 'app/styles/**/*.scss',
             templates: 'app/**/*.html',
             scripts: 'app/js/*.js',
             images: 'app/images/**/*',
-            fonts: 'app/fonts/*'
+            fonts: 'app/fonts/**/*'
         },
         dist: {
             styles: 'dist/css',

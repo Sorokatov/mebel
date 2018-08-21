@@ -143,9 +143,14 @@
         }
 
         &__image {
+            display: none;
             width: 550px;
             height: auto;
             max-height: 600px;
+
+            &._active {
+                display: block;
+            }
 
             & > img {
                 max-width: 100%;
