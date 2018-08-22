@@ -151,6 +151,10 @@
     &__form {
         @include column(flex-start);
 
+        &._callback {
+            padding: 30px 50px 45px;
+        }
+
         &-item {
             @include column(flex-start);
             width: 100%;

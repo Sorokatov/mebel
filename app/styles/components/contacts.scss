@@ -1,7 +1,118 @@
 .contacts {
-    padding: 30px 0;
+    padding: 30px 0 125px;
+
+    &__container {
+        width: 940px;
+        margin: 0 auto;
+    }
 
     &__title {
+        margin-bottom: 50px;
+    }
 
+    &__desc {
+        margin-bottom: 55px;
+        line-height: 1.5;
+    }
+
+    &__item {
+
+        & + & {
+            margin-top: 65px;
+        }
+
+        &-title {
+            margin-bottom: 30px;
+            @include roboto-bold;
+            font-size: 26px;
+        }
+
+        &-info {
+
+            &-row {
+                @include row();
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            &-block {
+
+                &:first-child {
+                    width: 500px;
+                }
+            }
+
+            &-schedule {
+                margin-top: 5px;
+                font-size: 16px;
+            }
+        }
+
+        &-map {
+
+            &-wrap {
+                position: relative;
+                width: calc(100% - 370px);
+                height: 100%;
+            }
+
+            @include bg-image("map-temp-big.jpg");
+            width: 100%;
+            height: 100%;
+
+            &-row {
+                @include row();
+                height: 270px;
+            }
+
+            &-overlay {
+                @extend .contact-us__map-overlay;
+            }
+        }
+    }
+
+    &__personal {
+        @include row();
+        flex-wrap: wrap;
+        margin-top: 85px;
+
+        &-item {
+            @include column(flex-start);
+            width: 300px;
+            margin-right: 20px;
+
+            &:nth-child(3n) {
+                margin-right: 0;
+            }
+        }
+
+        &-image {
+            max-width: 148px;
+            max-height: 122px;
+            margin-bottom: 35px;
+        }
+
+        &-department {
+            margin-bottom: 5px;
+        }
+
+        &-name {
+            margin-bottom: 25px;
+            @include calibri-bold;
+            font-size: 20px;
+        }
+
+        &-link {
+            color: $color-text;
+            transition: $transition-time color;
+
+            &:hover {
+                color: $orange;
+            }
+
+            & + & {
+                margin-top: 5px;
+            }
+        }
     }
 }

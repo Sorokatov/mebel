@@ -1,0 +1,22 @@
+.promo {
+    position: relative;
+    padding: 20.5px 0;
+    @include bg-image("promo-pattern.jpg");
+
+    &__container {
+        @include roboto-bold;
+        font-size: 32px;
+        text-align: center;
+        color: $white;
+    }
+
+    &__close {
+        position: absolute;
+        right: 11px;
+        top: 11px;
+
+        &-icon {
+            fill: $white;
+        }
+    }
+}

@@ -55,7 +55,9 @@
             productGalleryImg: '.js-product-gallery-img',
             deleteItemButton: '.js-delete-item',
             deleteItemTooltip: '.js-delete-item-tooltip',
-            deleteItemAction: '.js-delete-item-action'
+            deleteItemAction: '.js-delete-item-action',
+            promo: '.js-promo',
+            promoClose: '.js-promo-close'
         },
 
         CLASSES: {
@@ -77,6 +79,7 @@
             this.initResponsesVisibility();
             this.initPhoneMask();
             this.showSizesHintInSession();
+            this.showPromo();
         },
 
         initEventListeners: function () {
@@ -97,6 +100,7 @@
             $(document).on('click', this.SELECTORS.productGalleryThumb, this.changeGalleryImg.bind(this));
             $(document).on('click', this.SELECTORS.deleteItemButton, this.showDeleteTooltip.bind(this));
             $(document).on('click', this.SELECTORS.deleteItemAction, this.closeDeleteTooltip.bind(this));
+            $(document).on('click', this.SELECTORS.promoClose, this.closePromo.bind(this));
         },
 
         initSelectmenu: function () {
@@ -394,14 +398,6 @@
             $(event.currentTarget).closest(this.SELECTORS.sizeHintWrap).toggleClass(this.CLASSES.active);
         },
 
-        showSizesHintInSession: function () {
-
-            if (!sessionStorage.getItem('sizesHintWasShown') && $(this.SELECTORS.sizeHintWrap).length) {
-                $(this.SELECTORS.sizeHintWrap).addClass(this.CLASSES.active);
-                sessionStorage.setItem('sizesHintWasShown', 'true');
-            }
-        },
-
         changeGalleryImg: function (event) {
             var $self = $(event.currentTarget),
                 imgId = $self.data('img-id'),
@@ -420,6 +416,29 @@
 
         closeDeleteTooltip: function (event) {
             $(event.currentTarget).closest(this.SELECTORS.deleteItemTooltip).removeClass(this.CLASSES.active);
+        },
+
+        showSizesHintInSession: function () {
+
+            if (!sessionStorage.getItem('sizesHintWasShown') && $(this.SELECTORS.sizeHintWrap).length) {
+                $(this.SELECTORS.sizeHintWrap).addClass(this.CLASSES.active);
+                sessionStorage.setItem('sizesHintWasShown', 'true');
+            }
+        },
+
+        showPromo: function () {
+            var currentDay = new Date().getDay().toString();
+            localStorage.setItem('currentDay', currentDay);
+
+            if (currentDay !== localStorage.getItem('promoShownDay')) {
+                $(this.SELECTORS.promo).removeClass(this.CLASSES.hidden);
+            }
+        },
+
+        closePromo: function () {
+            var shownDay = new Date().getDay();
+            localStorage.setItem('promoShownDay', shownDay.toString());
+            $(this.SELECTORS.promo).addClass(this.CLASSES.hidden);
         }
     };
 
