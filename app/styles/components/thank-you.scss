@@ -1,0 +1,52 @@
+.thank-you {
+    padding: 110px 0;
+
+    &__container {
+        @include column(center);
+        width: 685px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        @include roboto-bold;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    &__label {
+        @extend .recommended__label;
+    }
+
+    &__text {
+        margin-bottom: 105px;
+        font-size: 22px;
+    }
+
+    &__form {
+        width: 100%;
+        padding: 65px 120px;
+        background-color: $color-text;
+        color: $white;
+
+        &-text {
+            margin-bottom: 15px;
+        }
+
+        &-content {
+            @include row('', flex-end);
+        }
+
+        &-item {
+
+            .input {
+                padding: 11px 13px;
+            }
+        }
+
+        &-label {
+            display: inline-block;
+            color: $orange;
+            margin-bottom: 15px;
+        }
+    }
+}
