@@ -1,0 +1,127 @@
+.select-city {
+
+    &__wrap {
+        position: relative;
+    }
+
+    &__wrap._active & {
+        pointer-events: auto;
+        opacity: 1;
+        bottom: -10px;
+    }
+
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 470px;
+    padding: 50px 60px;
+    transform: translateY(100%);
+    background-color: $color-text;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+    color: $orange;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    backface-visibility: hidden;
+    transition: $transition-time all;
+
+    &._pos-right {
+        left: auto;
+        right: 0;
+    }
+
+    &__close {
+        position: absolute;
+        top: 17px;
+        right: 17px;
+        cursor: pointer;
+
+        &-icon {
+            fill: $white;
+            transition: $transition-time fill;
+        }
+
+        &:hover &-icon {
+            fill: $red;
+        }
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        @include roboto-bold;
+        font-size: 26.5px;
+        color: $white;
+    }
+
+    &__desc {
+        margin-bottom: 30px;
+    }
+
+    &__items {
+        @include row();
+        margin-bottom: 30px;
+    }
+
+    &__column {
+        @include column(flex-start);
+        width: 33%;
+        padding-right: 15px;
+    }
+
+    &__item {
+        line-height: 22px;
+
+        &._sm {
+            font-size: 14.5px;
+            color: $brown-dark;
+        }
+
+        &._active {
+            padding: 0 8px;
+            color: $white;
+            background-color: $orange-bright;
+        }
+
+        & + & {
+            margin-top: 10px;
+        }
+    }
+
+    &__manual-input {
+
+        &-wrap {
+            @include row();
+            margin-bottom: 10px;
+        }
+
+        &-text {
+            margin-bottom: 12px;
+            font-size: 17px;
+        }
+
+        &-send {
+            width: 41px;
+            height: 41px;
+            margin-left: 10px;
+            background-color: $orange-bright;
+            @include bg-image('icons/send.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            transition: $transition-time background-color;
+
+            &:hover {
+                background-color: $red;
+            }
+
+            &._disabled {
+                pointer-events: none;
+                opacity: .5;
+            }
+        }
+
+        &-example {
+            font-size: 16px;
+        }
+    }
+}

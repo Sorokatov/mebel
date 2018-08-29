@@ -38,6 +38,11 @@
         }
     }
 
+    &._disabled {
+        pointer-events: none;
+        opacity: .5;
+    }
+
     &._loading {
         pointer-events: none;
     }

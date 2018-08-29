@@ -1,13 +1,22 @@
 .cart {
-    position: fixed;
     @include row();
     width: 1080px;
     min-height: 720px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 0 auto;
     z-index: 2;
     background-color: $white;
+    transition: $transition-time all ease-in-out;
+
+    .mfp-ready & {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &,
+    .mfp-removing & {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
 
     &__content {
         width: 740px;
@@ -462,6 +471,8 @@
         padding: 20px 0 15px 33px;
         background-color: $orange-bright;
         cursor: pointer;
+        z-index: $z-collapsed-cart;
+        transition: $transition-time all;
 
         &-row {
             @include row('', center)

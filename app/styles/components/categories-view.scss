@@ -19,6 +19,7 @@
     &__content {
         display: none;
         margin-bottom: 30px;
+        max-width: $sm-desktop-width;
         width: 100%;
         padding: 0 100px 0 45px;
 

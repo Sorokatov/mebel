@@ -34,8 +34,9 @@
     }
 
     &__contacts {
-        max-width: 457px;
         @include column();
+        max-width: 457px;
+        width: 457px;
 
         &-row {
             @include inline-row();

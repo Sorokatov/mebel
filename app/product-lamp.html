@@ -21,19 +21,22 @@
             <div class="product-page__column">
                 <div class="product-page__image-zone">
                     <div class="product-page__image-thumbs">
-                        <a href="#" class="product-page__image-thumb _active">
+                        <a href="#" class="product-page__image-thumb _active js-product-gallery-thumb" data-img-id="01">
                             <img src="images/thumb-6.jpg" alt="thumb">
                         </a>
-                        <a href="#" class="product-page__image-thumb">
-                            <img src="images/thumb-7.jpg" alt="thumb">
-                        </a>
-                        <a href="#" class="product-page__image-thumb">
-                            <img src="images/thumb-8.jpg" alt="thumb">
+                        <a href="#" class="product-page__image-thumb js-product-gallery-thumb" data-img-id="02">
+                            <img src="images/product-big-3_2.jpg" alt="thumb">
                         </a>
                     </div>
-                    <a href="#" class="product-page__image">
-                        <img src="images/product-big-3.jpg" alt="product">
-                    </a>
+
+                    <div class="product-page__image-wrap js-product-gallery">
+                        <a href="images/product-big-3.jpg" class="product-page__image _active js-product-gallery-img" data-img-id="01">
+                            <img src="images/product-big-3.jpg" alt="product">
+                        </a>
+                        <a href="images/product-big-3_2.jpg" class="product-page__image js-product-gallery-img" data-img-id="02">
+                            <img src="images/product-big-3_2.jpg" alt="product">
+                        </a>
+                    </div>
                 </div>
                 <div class="product-page__data">
                     <div class="product-page__title">
@@ -105,9 +108,54 @@
             <div class="product-page__column">
                 <div class="product-page__delivery-row">
                     Доставка в:
-                    <a href="#" class="link _color-orange">
-                        <span class="link__text">Одесса</span>
-                    </a>
+                    <div class="select-city__wrap js-select-city-wrap">
+                        <a href="#" class="link _color-orange js-select-city-open">
+                            <span class="link__text js-select-city-value">Одесса</span>
+                        </a>
+                        <div class="select-city js-select-city">
+                            <span class="select-city__close js-select-city-close">
+                                <svg class="select-city__close-icon" width="17px" height="17px">
+                                    <path d="M16.017,13.966 L13.966,16.016 L8.499,10.548 L3.031,16.016 L0.980,13.966 L6.448,8.498 L0.980,3.030 L3.031,0.979 L8.499,6.447 L13.966,0.979 L16.017,3.030 L10.549,8.498 L16.017,13.966 Z"/>
+                                </svg>
+                            </span>
+                            <div class="select-city__title">Выберите город</div>
+                            <div class="select-city__desc">Мы доставляем заказы по всей Украине!</div>
+                            <div class="select-city__items">
+                                <div class="select-city__column">
+                                    <a href="#" class="select-city__item js-select-city-item" data-value="Киев">Киев</a>
+                                    <a href="#" class="select-city__item js-select-city-item _sm" data-value="Бровары">Бровары</a>
+                                    <a href="#" class="select-city__item js-select-city-item _sm" data-value="Борисполь">Борисполь</a>
+                                    <a href="#" class="select-city__item js-select-city-item _sm" data-value="Ирпень">Ирпень</a>
+                                </div>
+                                <div class="select-city__column">
+                                    <a href="#" class="select-city__item js-select-city-item  _active" data-value="Одесса">Одесса</a>
+                                    <a href="#" class="select-city__item js-select-city-item _sm" data-value="Черноморск">Черноморск</a>
+                                    <a href="#" class="select-city__item js-select-city-item _sm" data-value="Николаев">Николаев</a>
+                                    <a href="#" class="select-city__item js-select-city-item _sm" data-value="Южный">Южный</a>
+                                    <a href="#" class="select-city__item js-select-city-item _sm" data-value="Фонтанка">Фонтанка</a>
+                                </div>
+                                <div class="select-city__column">
+                                    <a href="#" class="select-city__item js-select-city-item" data-value="Харьков">Харьков</a>
+                                    <a href="#" class="select-city__item js-select-city-item" data-value="Днепр">Днепр</a>
+                                    <a href="#" class="select-city__item js-select-city-item" data-value="Запорожье">Запорожье</a>
+                                    <a href="#" class="select-city__item js-select-city-item" data-value="Львов">Львов</a>
+                                </div>
+                            </div>
+                            <div class="select-city__manual-input">
+                                <div class="select-city__manual-input-text">Или введите другой населенный пункт</div>
+                                <div class="select-city__manual-input-wrap">
+                                    <input type="text" class="input js-select-city-input" placeholder="Введите ваш город">
+                                    <button class="select-city__manual-input-send _disabled js-select-city-button"></button>
+                                </div>
+                                <div class="select-city__manual-input-example">
+                                    Например:
+                                    <a href="#" class="link _font-sm _color-orange js-select-city-item" data-value="Беляевка">
+                                        <span class="link__text">Беляевка</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     15-20 рабочих дней
                 </div>
                 <div class="product-page__order-row">
@@ -118,7 +166,7 @@
                         </div>
                     </div>
                     <button class="button">Заказать</button>
-                    <a href="#" class="link _color-orange _font-sm">
+                    <a href="#mfp-how-to-order" class="link _color-orange _font-sm js-popup-toggle">
                         <span class="link__text">Как происходит заказ?</span>
                     </a>
                 </div>
@@ -153,47 +201,118 @@
                 </div>
             </div>
         </div>
+
+        <div class="product-page__description">
+            <div class="product-page__installation">
+                <h3 class="product-page__description-title">Сборка и установка</h3>
+                <p>
+                    При использовании шкафа купе нет необходимости в дополнительном пространстве
+                    перед шкафом для открытия,  как в шкафу с распашными дверями, но двери шкафа-купе
+                    уменьшают на 70—120 мм его полезную глубину, также система шкафа-купе налагает дополнительные
+                    ограничения на расположение выдвижных и откидных элементов.
+                </p>
+            </div>
+        </div>
         <div class="product-page__responses">
             <h2 class="product-page__title">Отзывы</h2>
-            <div class="product-page__responses-content">
-                <div class="product-page__responses-item">
-                    <div class="product-page__responses-item-text _collapsed">
+            <div class="product-page__responses-content js-responses">
+                <div class="product-page__responses-item js-responses-item">
+                    <div class="product-page__responses-item-text js-responses-item-text">
                         Мастера приветливые, все подняли на четвертый этаж,
                         собрали шкаф но из-за нового щитка он не поместился в нишу.
                         Пришлось подрезать стенку, сделали акуратно.
                         Отдельное спасибо дизайнеру что отговорил сделать
                     </div>
-                    <a href="#" class="link _color-orange _font-sm">
-                        <span class="link__text">Читать полностью</span>
+                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
+                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
+                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
                     </a>
                     <span class="product-page__responses-author">Светлана</span>
                 </div>
-                <div class="product-page__responses-item">
-                    <div class="product-page__responses-item-text">
+                <div class="product-page__responses-item js-responses-item ">
+                    <div class="product-page__responses-item-text js-responses-item-text">
                         Шустрые сборщики, никаких вопросов, много мусора, но за собой убрали )
                     </div>
+                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
+                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
+                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
+                    </a>
                     <span class="product-page__responses-author">Анна</span>
                 </div>
-                <div class="product-page__responses-item">
-                    <div class="product-page__responses-item-text">
+                <div class="product-page__responses-item js-responses-item">
+                    <div class="product-page__responses-item-text js-responses-item-text">
                         Заказывала шкаф купе, предыдущий покупала
                         в сетевом магазине но он не продержался и трех лет.
                         Новый шкаф выглядит отлично и создает впечатление
                         качественого и крепкого. Надеюсь прослужит не один год.
                         Спасибо за работу.
                     </div>
+                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
+                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
+                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
+                    </a>
                     <span class="product-page__responses-author">Татьяна</span>
+                </div>
+                <div class="product-page__responses-item js-responses-item">
+                    <div class="product-page__responses-item-text js-responses-item-text">
+                        Мастера приветливые, все подняли на четвертый этаж,
+                        собрали шкаф но из-за нового щитка он не поместился в нишу.
+                        Пришлось подрезать стенку, сделали акуратно.
+                        Отдельное спасибо дизайнеру что отговорил сделать
+                    </div>
+                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
+                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
+                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
+                    </a>
+                    <span class="product-page__responses-author">Светлана 2</span>
+                </div>
+                <div class="product-page__responses-item js-responses-item ">
+                    <div class="product-page__responses-item-text js-responses-item-text">
+                        Шустрые сборщики, никаких вопросов, много мусора, но за собой убрали )
+                    </div>
+                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
+                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
+                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
+                    </a>
+                    <span class="product-page__responses-author">Анна 2</span>
+                </div>
+                <div class="product-page__responses-item js-responses-item">
+                    <div class="product-page__responses-item-text js-responses-item-text">
+                        Заказывала шкаф купе, предыдущий покупала
+                        в сетевом магазине но он не продержался и трех лет.
+                        Новый шкаф выглядит отлично и создает впечатление
+                        качественого и крепкого. Надеюсь прослужит не один год.
+                        Спасибо за работу.
+                    </div>
+                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
+                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
+                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
+                    </a>
+                    <span class="product-page__responses-author">Татьяна 2</span>
+                </div>
+                <div class="product-page__responses-item js-responses-item">
+                    <div class="product-page__responses-item-text js-responses-item-text">
+                        Мастера приветливые, все подняли на четвертый этаж,
+                        собрали шкаф но из-за нового щитка он не поместился в нишу.
+                        Пришлось подрезать стенку, сделали акуратно.
+                        Отдельное спасибо дизайнеру что отговорил сделать
+                    </div>
+                    <a href="#" class="link _color-orange _font-sm _hidden js-responses-toggle">
+                        <span class="link__text js-responses-toggle-text">Читать полностью</span>
+                        <span class="link__text _hidden js-responses-toggle-text">Скрыть</span>
+                    </a>
+                    <span class="product-page__responses-author">Светлана 3</span>
                 </div>
             </div>
             <div class="product-page__responses-controls">
-                <button class="button _inverted">Написать Отзыв</button>
-                <div class="product-page__responses-nav">
-                    <a href="#" class="product-page__responses-nav-item _prev">
+                <a href="#mfp-response" class="button _inverted js-popup-toggle">Написать Отзыв</a>
+                <div class="product-page__responses-nav _hidden js-responses-nav">
+                    <a href="#" class="product-page__responses-nav-item _disabled _prev js-responses-nav-item" data-action="prev">
                         <svg class="product-page__responses-nav-icon" width="7px" height="12px">
                             <path d="M7.000,9.485 L2.919,5.999 L7.000,2.513 L7.000,0.006 L-0.014,5.999 L7.000,11.991 L7.000,9.485 Z"/>
                         </svg>
                     </a>
-                    <a href="#" class="product-page__responses-nav-item _next">
+                    <a href="#" class="product-page__responses-nav-item _next js-responses-nav-item" data-action="next">
                         <svg class="product-page__responses-nav-icon" width="7px" height="12px">
                             <path d="M7.000,9.485 L2.919,5.999 L7.000,2.513 L7.000,0.006 L-0.014,5.999 L7.000,11.991 L7.000,9.485 Z"/>
                         </svg>
@@ -204,364 +323,7 @@
     </div>
 </div>
 
-<div class="contact-us">
-    <div class="contact-us__container container">
-        <div class="contact-us__socials">
-            <div class="contact-us__title">
-                <h2 class="title _color-white">Есть вопрос?</h2>
-            </div>
-            <div class="contact-us__socials-text">
-                Хотите перезвоним Вам за 30 секунд ? :)<br>
-                Оставьте свой телефон:
-            </div>
-            <div class="contact-us__socials-recall">
-                <input type="text" class="input" value="+38">
-                <button class="button">Перезвоните мне</button>
-            </div>
-            <div class="contact-us__socials-text">
-                Или пишите нам прямо сейчас,<br>
-                с радостью ответим на все Ваши вопросы
-            </div>
-            <div class="contact-us__socials-block">
-                <a href="#" class="contact-us__socials-item">
-                    <i class="contact-us__socials-icon _viber"></i>
-                    Viber
-                </a>
-                <a href="#" class="contact-us__socials-item">
-                    <i class="contact-us__socials-icon _telegram"></i>
-                    Telegram
-                </a>
-                <a href="#" class="contact-us__socials-item">
-                    <i class="contact-us__socials-icon _messenger"></i>
-                    Facebook Messenger
-                </a>
-                <a href="#" class="contact-us__socials-item">
-                    <i class="contact-us__socials-icon _whatsup"></i>
-                    WhatsApp
-                </a>
-                <a href="#" class="contact-us__socials-item">
-                    <i class="contact-us__socials-icon _chat"></i>
-                    Онлайн Чат
-                </a>
-            </div>
-        </div>
-        <div class="contact-us__address">
-            <div class="contact-us__title">
-                <h2 class="title _color-white">Приходите к нам в Шоурум</h2>
-            </div>
-            <div class="contact-us__address-controls">
-                <a href="#" class="link _color-orange _active">
-                    <span class="link__text">Одесса №1</span>
-                </a>
-                <a href="#" class="link _color-orange">
-                    <span class="link__text">Одесса №2</span>
-                </a>
-                <a href="#" class="link _color-orange">
-                    <span class="link__text">Киев</span>
-                </a>
-            </div>
-            <div class="contact-us__address-preview">
-                <div class="contact-us__map-wrap">
-                    <div class="contact-us__map-overlay">Нажмите для просмотра</div>
-                    <div class="contact-us__map"></div>
-                </div>
-                <div class="contact-us__address-photo">
-                    <img src="images/showroom.jpg">
-                </div>
-            </div>
-            <div class="contact-us__address-data">
-                <div class="contact-us__address-column">
-                    Одесса, ул. Семена Палия, 125, магазин 290
-                    <div class="contact-us__address-schedule">Вт - Вс, с 9:00 до 14:00</div>
-                </div>
-                <div class="contact-us__address-column">
-                    +38 (050) 555 - 45 - 55
-                    <div class="contact-us__address-schedule">с 10:00 до 20:00</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="recommended">
-    <div class="recommended__container container">
-        <div class="recommended__title">
-            <h2 class="title">Похожие товары</h2>
-        </div>
-        <div class="recommended__items">
-            <div class="product">
-                <div class="product__content">
-                    <div class="product__image-wrap">
-                        <img class="product__image" src="images/product-2.jpg" alt="product-2">
-                        <img class="product__image-alt" src="images/product-1.jpg" alt="product-1">
-                    </div>
-                    <h3 class="product__title">
-                        Шкаф Купе Checkstar
-                        с рисунком пескоструй ...
-                    </h3>
-                    <div class="product__colors">
-                        <div class="product__colors-category">
-                                    <span class="product__color">
-                                        <img src="images/colors/col-1.jpg" alt="col-1">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-2.jpg" alt="col-2">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-3.jpg" alt="col-3">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-4.jpg" alt="col-4">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-5.jpg" alt="col-5">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-6.jpg" alt="col-6">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-7.jpg" alt="col-7">
-                                    </span>
-                            <span class="product__color-more"></span>
-                        </div>
-                        <div class="product__colors-category _sm">
-                                    <span class="product__color">
-                                        <img src="images/colors/col-8.jpg" alt="col-8">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-9.jpg" alt="col-9">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-10.jpg" alt="col-10">
-                                    </span>
-                        </div>
-                        <div class="product__colors-category">
-                                    <span class="product__color">
-                                        <img src="images/colors/col-11.jpg" alt="col-11">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-12.jpg" alt="col-12">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-13.jpg" alt="col-13">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-14.jpg" alt="col-14">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-15.jpg" alt="col-15">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-16.jpg" alt="col-16">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-17.jpg" alt="col-17">
-                                    </span>
-                            <span class="product__color-more"></span>
-                        </div>
-                    </div>
-                    <div class="price__wrap">
-                        <div class="price">
-                            <span class="price__value">4050</span>
-                            <span class="price__period">грн</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="product__content">
-                    <div class="product__image-wrap">
-                        <img class="product__image" src="images/product-1.jpg" alt="product-1">
-                        <img class="product__image-alt" src="images/product-3.jpg" alt="product-3">
-                    </div>
-                    <h3 class="product__title">
-                        Купе Шкаф Класик 004, матовые двери
-                    </h3>
-                    <div class="product__colors">
-                        <div class="product__colors-category">
-                                    <span class="product__color">
-                                        <img src="images/colors/col-1.jpg" alt="col-1">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-2.jpg" alt="col-2">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-3.jpg" alt="col-3">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-4.jpg" alt="col-4">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-5.jpg" alt="col-5">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-6.jpg" alt="col-6">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-7.jpg" alt="col-7">
-                                    </span>
-                            <span class="product__color-more"></span>
-                        </div>
-                        <div class="product__colors-category _sm">
-                                    <span class="product__color">
-                                        <img src="images/colors/col-8.jpg" alt="col-8">
-                                    </span>
-                            <span class="product__color">
-                                        <img src="images/colors/col-9.jpg" alt="col-9">
-                                    </span>
-                        </div>
-                        <div class="product__colors-category">
-                                    <span class="product__color">
-                                        <img src="images/colors/col-11.jpg" alt="col-11">
-                                    </span>
-                        </div>
-                    </div>
-                    <div class="price__wrap">
-                        <div class="price _discount">
-                            <span class="price__old-value">4500</span>
-                            <span class="price__value">4050</span>
-                            <span class="price__period">грн</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="product__content">
-                    <div class="product__image-wrap">
-                        <img class="product__image" src="images/product-2.jpg" alt="product-2">
-                        <img class="product__image-alt" src="images/product-3.jpg" alt="product-3">
-                    </div>
-                    <h3 class="product__title">
-                        Шкаф Класик 001 с зеркальными дверями
-                    </h3>
-                    <div class="product__colors">
-                        <div class="product__colors-category">
-                                        <span class="product__color">
-                                            <img src="images/colors/col-1.jpg" alt="col-1">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-2.jpg" alt="col-2">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-3.jpg" alt="col-3">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-4.jpg" alt="col-4">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-5.jpg" alt="col-5">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-6.jpg" alt="col-6">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-7.jpg" alt="col-7">
-                                        </span>
-                            <span class="product__color-more"></span>
-                        </div>
-                        <div class="product__colors-category _sm">
-                                        <span class="product__color">
-                                            <img src="images/colors/col-8.jpg" alt="col-8">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-9.jpg" alt="col-9">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-10.jpg" alt="col-10">
-                                        </span>
-                        </div>
-                    </div>
-                    <div class="price__wrap">
-                        <div class="price _sold-out">
-                            <span class="price__old-value">4500</span>
-                            <span class="price__value">4050</span>
-                            <span class="price__period">грн</span>
-                        </div>
-                        <span class="price__label">Продано</span>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="product__content">
-                    <div class="product__image-wrap">
-                        <img class="product__image" src="images/product-2.jpg" alt="product-2">
-                        <img class="product__image-alt" src="images/product-1.jpg" alt="product-1">
-                    </div>
-                    <h3 class="product__title">
-                        Шкаф Купе Checkstar
-                        с рисунком пескоструй ...
-                    </h3>
-                    <div class="product__colors">
-                        <div class="product__colors-category">
-                                        <span class="product__color">
-                                            <img src="images/colors/col-1.jpg" alt="col-1">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-2.jpg" alt="col-2">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-3.jpg" alt="col-3">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-4.jpg" alt="col-4">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-5.jpg" alt="col-5">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-6.jpg" alt="col-6">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-7.jpg" alt="col-7">
-                                        </span>
-                            <span class="product__color-more"></span>
-                        </div>
-                        <div class="product__colors-category _sm">
-                                        <span class="product__color">
-                                            <img src="images/colors/col-8.jpg" alt="col-8">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-9.jpg" alt="col-9">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-10.jpg" alt="col-10">
-                                        </span>
-                        </div>
-                        <div class="product__colors-category">
-                                        <span class="product__color">
-                                            <img src="images/colors/col-11.jpg" alt="col-11">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-12.jpg" alt="col-12">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-13.jpg" alt="col-13">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-14.jpg" alt="col-14">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-15.jpg" alt="col-15">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-16.jpg" alt="col-16">
-                                        </span>
-                            <span class="product__color">
-                                            <img src="images/colors/col-17.jpg" alt="col-17">
-                                        </span>
-                            <span class="product__color-more"></span>
-                        </div>
-                    </div>
-                    <div class="price__wrap">
-                        <div class="price">
-                            <span class="price__value">4050</span>
-                            <span class="price__period">грн</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+//= templates/contact-us.html
+//= templates/recommended.html
 
 //= templates/footer.html

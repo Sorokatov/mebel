@@ -1,7 +1,7 @@
 // Settings imports
 
+@import "__vars";
 @import "_mixins";
-@import "_vars";
 @import "default";
 @import "fonts";
 
@@ -43,6 +43,7 @@
 @import "components/product";
 @import "components/promo";
 @import "components/recommended";
+@import "components/select-city";
 @import "components/showcase";
 @import "components/thank-you";
 

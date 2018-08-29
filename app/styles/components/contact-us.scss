@@ -12,7 +12,7 @@
     }
 
     &__socials {
-        width: 442px;
+        width: 440px;
 
         &-recall {
             @include row(space-between);
@@ -67,7 +67,7 @@
     }
 
     &__address {
-        width: 657px;
+        width: calc(100% - 570px);
 
         &-controls {
             margin-bottom: 30px;
@@ -129,6 +129,7 @@
         }
 
         @include bg-image("map-temp.jpg");
+        background-size: cover;
         width: 100%;
         height: 100%;
 

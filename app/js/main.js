@@ -12,8 +12,11 @@
 
         SELECTORS: {
             parallaxContainer: '.js-parallax',
+
             newsSlider: '.js-news-slider',
+
             orderFilter: '.js-order-filter',
+
             filterCategory: '.js-filter-category',
             filterItem: '.js-filter-item',
             filterItemInput: '.js-filter-item-input',
@@ -22,23 +25,30 @@
             filterVisibilityCounter: '.js-hidden-filters-count',
             filterVisibilityShowText: '.js-filter-show-text',
             filterVisibilityHideText: '.js-filter-hide-text',
+
             categoryViewContainer: '.js-category-view-container',
             categoryViewContent: '.js-category-view-content',
             categoryViewLink: '.js-category-view-link',
+
             phoneInput: '.js-phone-number-input',
+
             colorLink: '.js-color-link',
+
             sizeLink: '.js-size-link',
             sizeValue: '.js-size-value',
             sizeInput: '.js-size-input',
+
             constructorButton: '.js-constructor-button',
             constructorBlock: '.js-constructor-block',
             constructorValue: '.js-constructor-label-value',
             constructorImage: '.js-constructor-image',
             constructorImagesList: '.js-constructor-images-list',
             constructorNewImg: '.js-constructor-new-img',
+
             popupToggle: '.js-popup-toggle',
             popup: 'js-popup',
             popupClose: '.js-close-popup',
+
             responsesContainer: '.js-responses',
             responsesItem: '.js-responses-item',
             responsesItemText: '.js-responses-item-text',
@@ -47,17 +57,34 @@
             responsesNav: '.js-responses-nav',
             responsesNavItem: '.js-responses-nav-item',
             responsesSendButton: '.js-send-response',
+
             sizeHintWrap: '.js-size-hint-wrap',
             sizeHintOpen: '.js-size-hint-open',
             sizeHintClose: '.js-size-hint-close',
+
             productGallery: '.js-product-gallery',
             productGalleryThumb: '.js-product-gallery-thumb',
             productGalleryImg: '.js-product-gallery-img',
+
             deleteItemButton: '.js-delete-item',
             deleteItemTooltip: '.js-delete-item-tooltip',
             deleteItemAction: '.js-delete-item-action',
+
             promo: '.js-promo',
-            promoClose: '.js-promo-close'
+            promoClose: '.js-promo-close',
+
+            selectCity: '.js-select-city',
+            selectCityWrap: '.js-select-city-wrap',
+            selectCityOpen: '.js-select-city-open',
+            selectCityClose: '.js-select-city-close',
+            selectCityValue: '.js-select-city-value',
+            selectCityItem: '.js-select-city-item',
+            selectCityInput: '.js-select-city-input',
+            selectCityButton: '.js-select-city-button',
+
+            cart: '#mfp-cart',
+            collapsedCart: '.js-cart-collapsed',
+            cartClose: '.js-cart-close'
         },
 
         CLASSES: {
@@ -101,9 +128,16 @@
             $(document).on('click', this.SELECTORS.deleteItemButton, this.showDeleteTooltip.bind(this));
             $(document).on('click', this.SELECTORS.deleteItemAction, this.closeDeleteTooltip.bind(this));
             $(document).on('click', this.SELECTORS.promoClose, this.closePromo.bind(this));
+            $(document).on('click', this.SELECTORS.selectCityOpen, this.openCitySelect.bind(this));
+            $(document).on('click', this.SELECTORS.selectCityClose, this.closeCitySelect.bind(this));
+            $(document).on('click', this.SELECTORS.selectCityItem, this.selectCityFromList.bind(this));
+            $(document).on('input', this.SELECTORS.selectCityInput, this.handleCityInputChange.bind(this));
+            $(document).on('click', this.SELECTORS.selectCityButton, this.updateCityValueFromInput.bind(this));
+            $(document).on('click', this.SELECTORS.cartClose, this.closeCart.bind(this));
         },
 
         initSelectmenu: function () {
+
             $(this.SELECTORS.orderFilter).selectmenu({
                 appendTo: $(this.SELECTORS.orderFilter).parent()
             });
@@ -134,7 +168,25 @@
                 type: 'inline',
                 midClick: true,
                 removalDelay: 300
-            })
+            });
+
+            $(this.SELECTORS.collapsedCart).magnificPopup({
+                items: {
+                    src: this.SELECTORS.cart
+                },
+                callbacks: {
+
+                    open: function () {
+                        $(this.SELECTORS.collapsedCart).addClass(this.CLASSES.hidden);
+                    }.bind(this),
+
+                    close: function () {
+                        $(this.SELECTORS.collapsedCart).removeClass(this.CLASSES.hidden);
+                        this.closeCitySelect();
+                    }.bind(this)
+                },
+                removalDelay: 300
+            });
         },
 
         initGallery: function () {
@@ -439,6 +491,75 @@
             var shownDay = new Date().getDay();
             localStorage.setItem('promoShownDay', shownDay.toString());
             $(this.SELECTORS.promo).addClass(this.CLASSES.hidden);
+            $(window).trigger('resize').trigger('scroll');
+        },
+
+        openCitySelect: function (event) {
+            var $wrapper = $(event.currentTarget).closest(this.SELECTORS.selectCityWrap),
+                $activeItem = $wrapper.find(this.SELECTORS.selectCityItem + '.' + this.CLASSES.active),
+                currentValue = $wrapper.find(this.SELECTORS.selectCityValue).text();
+
+            event.preventDefault();
+            if ($activeItem.data('value') !== currentValue) $activeItem.removeClass(this.CLASSES.active);
+            this.closeCitySelect();
+            $wrapper.addClass(this.CLASSES.active);
+        },
+
+        closeCitySelect: function () {
+            $(this.SELECTORS.selectCityWrap).removeClass(this.CLASSES.active);
+        },
+
+        selectCityFromList: function (event) {
+            var $self = $(event.currentTarget),
+                value = $self.data('value'),
+                $wrapper = $self.closest(this.SELECTORS.selectCityWrap);
+
+            event.preventDefault();
+            $wrapper.find(this.SELECTORS.selectCityValue).text(value);
+            $wrapper.find(this.SELECTORS.selectCityItem).removeClass(this.CLASSES.active);
+            $self.addClass(this.CLASSES.active);
+            this.closeCitySelect();
+        },
+
+        handleCityInputChange: function (event) {
+            var $self = $(event.currentTarget),
+                $sendButton = $self.closest(this.SELECTORS.selectCityWrap).find(this.SELECTORS.selectCityButton);
+
+            if ($self.val() !== '') {
+                $sendButton.removeClass(this.CLASSES.disabled)
+            } else {
+                $sendButton.addClass(this.CLASSES.disabled);
+            }
+        },
+
+        updateCityValueFromInput: function (event) {
+            var $self = $(event.currentTarget),
+                $wrapper = $self.closest(this.SELECTORS.selectCityWrap),
+                $input = $wrapper.find(this.SELECTORS.selectCityInput);
+
+                $wrapper.find(this.SELECTORS.selectCityValue).text($input.val());
+                this.closeCitySelect();
+                $input.val('');
+                $self.addClass(this.CLASSES.disabled);
+        },
+
+        handleCollapsedCartClick: function (event) {
+            $(event.currentTarget).addClass(this.CLASSES.hidden);
+            this.openCart();
+        },
+
+        openCart: function () {
+
+            $.magnificPopup.open({
+                items: {
+                    src: '#mfp-cart'
+                },
+                type: 'inline'
+            })
+        },
+
+        closeCart: function () {
+            this.closePopup();
         }
     };
 

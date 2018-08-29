@@ -117,7 +117,7 @@ button.mfp-arrow {
     background: transparent;
     border: 0;
     -webkit-appearance: none;
-    display: block;
+    display: none;
     outline: none;
     padding: 0;
     z-index: 1046;
@@ -129,6 +129,7 @@ button::-moz-focus-inner {
     border: 0; }
 
 .mfp-close {
+    display: none;
     width: 44px;
     height: 44px;
     line-height: 44px;
