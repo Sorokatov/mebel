@@ -72,3 +72,15 @@
 @mixin bg-image($path) {
     background-image: url("../images/#{$path}");
 }
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width + 1 + $container-padding * 2}) {
+        @content;
+    }
+}
+
+@mixin sm-desktop {
+    @media (max-width: #{$desktop-width + $container-padding * 2}) {
+        @content;
+    }
+}

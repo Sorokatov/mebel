@@ -31,6 +31,7 @@
         line-height: 1;
         @include calibri-regular;
         text-transform: none;
+        transition: none;
 
         &:hover {
             color: $orange-bright;

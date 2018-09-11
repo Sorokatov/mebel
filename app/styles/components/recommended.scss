@@ -46,7 +46,23 @@
         width: 100%;
 
         .product {
-            width: 25%;
+            width: calc((100% - 65px *4) / 5);
+
+            &:nth-child(n+6) {
+                display: none;
+            }
+
+            @include sm-desktop {
+                width: calc((100% - 65px * 3) / 4);
+
+                &:nth-child(n+5) {
+                    display: none;
+                }
+            }
+        }
+
+        .product + .product {
+            margin-left: 65px;
         }
     }
 }

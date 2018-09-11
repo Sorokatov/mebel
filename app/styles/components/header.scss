@@ -9,7 +9,11 @@
     &__nav {
 
         .link + .link {
-            margin-left: 35px;
+            margin-left: 75px;
+
+            @include sm-desktop {
+                margin-left: 35px;
+            }
         }
 
         &-contacts {
@@ -17,7 +21,11 @@
             margin-bottom: 40px;
 
             .link + .link {
-                margin-left: 52px;
+                margin-left: 74px;
+
+                @include sm-desktop {
+                    margin-left: 52px;
+                }
             }
         }
     }
@@ -35,8 +43,13 @@
 
     &__contacts {
         @include column();
-        max-width: 457px;
-        width: 457px;
+        max-width: 565px;
+        width: 565px;
+
+        @include sm-desktop {
+            max-width: 457px;
+            width: 457px;
+        }
 
         &-row {
             @include inline-row();
@@ -46,7 +59,11 @@
             @include column();
 
             & + & {
-                margin-left: 50px;
+                margin-left: 85px;
+
+                @include sm-desktop {
+                    margin-left: 50px;
+                }
             }
         }
 

@@ -66,15 +66,27 @@ p {
 }
 
 .container {
-    max-width: $sm-desktop-width;
+    max-width: $desktop-width;
     width: 100%;
     margin: 0 auto;
 
+    &._not-adaptive {
+        max-width: $sm-desktop-width;
+    }
+
+    @include sm-desktop {
+        max-width: $sm-desktop-width;
+    }
 
     &-full {
-        max-width: 100%;
+        max-width: $desktop-width;
         width: 100%;
-        padding: 0 50px;
+        margin: 0 auto;
+
+        @include sm-desktop {
+            max-width: 100%;
+            padding: 0 50px;
+        }
     }
 }
 

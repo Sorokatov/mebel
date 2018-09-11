@@ -6,7 +6,11 @@
     }
 
     &__filters {
-        width: 250px;
+        width: 300px;
+
+        @include sm-desktop {
+            width: 250px;
+        }
 
         &-count {
             @include row('', center);
@@ -44,9 +48,12 @@
         }
 
         &-content {
-            margin-left: -50px;
             padding: 30px 30px 44px 50px;
             background-color: $brown;
+
+            @include sm-desktop {
+                margin-left: -50px;
+            }
         }
 
         &-clear {
@@ -133,35 +140,34 @@
     }
 
     &__content {
-        width: calc(100% - 310px);
+        width: calc(100% - 360px);
+
+        @include sm-desktop {
+            width: calc(100% - 310px);
+        }
     }
 
     &__product-list {
         padding-bottom: 65px;
 
+        .product + .product {
+            margin-left: 50px;
+        }
+
         .product {
-            $product-spacing: 75px;
 
-            @media screen and (min-width: 1300px) and (max-width: 1629px) {
-                width: calc((100% - #{$product-spacing * 2}) / 3);
-
-                &:nth-child(3n + 1) {
-                    margin-left: 0;
-                }
-            }
-
-            @media screen and (min-width: 1630px) and (max-width: 1949px) {
-                width: calc((100% - #{$product-spacing * 3}) / 4);
+            @include desktop {
+                width: 245px;
 
                 &:nth-child(4n + 1) {
                     margin-left: 0;
                 }
             }
 
-            @media screen and (min-width: 1950px) {
-                width: calc((100% - #{$product-spacing * 4}) / 5);
+            @include sm-desktop {
+                width: calc((100% - 55px * 2) / 3);
 
-                &:nth-child(5n + 1) {
+                &:nth-child(3n + 1) {
                     margin-left: 0;
                 }
             }
