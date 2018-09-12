@@ -128,25 +128,26 @@
         }
 
         &__card {
-            @include row(space-between);
+            @include column();
         }
 
-        &__column {
+        &__row {
+            @include row();
 
-            &:first-child {
-                width: 665px;
-            }
-
-            &:last-child {
-                width: 525px;
+            @include sm-desktop {
+                @include row(space-between);
             }
         }
 
         &__image {
             display: none;
-            width: 550px;
+            width: 490px;
             height: auto;
             max-height: 600px;
+
+            @include sm-desktop {
+                width: 550px;
+            }
 
             &._active {
                 display: block;
@@ -160,14 +161,24 @@
             }
 
             &-zone {
+                width: 665px;
                 @include row();
                 margin-bottom: 70px;
+                padding-right: 60px;
+
+                @include sm-desktop {
+                    padding-right: 0;
+                }
             }
 
             &-thumbs {
                 margin-top: 4px;
-                margin-right: 15px;
+                margin-right: 70px;
                 @include column();
+
+                @include sm-desktop {
+                    margin-right: 15px;
+                }
             }
 
             &-thumb {
@@ -201,19 +212,32 @@
         }
 
         &__constructor {
+            width: 635px;
             @include row(space-between);
             margin-bottom: 35px;
+
+            @include sm-desktop {
+                width: 525px;
+            }
 
             &-column {
 
                 &:first-child {
-                    min-width: 210px;
-                    width: 210px;
+                    min-width: 295px;
+                    width: 295px;
+
+                    @include sm-desktop {
+                        min-width: 210px;
+                        width: 210px;
+                    }
                 }
 
-
                 &:last-child {
-                    width: 260px;
+                    width: 320px;
+
+                    @include sm-desktop {
+                        width: 260px;
+                    }
                 }
 
                 &:only-child {
@@ -346,7 +370,11 @@
             max-width: 440px;
             border: 1px solid $orange;
             padding: 60px;
-            margin-left: auto;
+            margin-left: 60px;
+
+            @include sm-desktop {
+                margin-left: auto;
+            }
 
             &-row {
                 @include row();
@@ -420,7 +448,13 @@
         }
 
         &__data {
-            padding-left: 60px;
+            width: 800px;
+            margin-left: 110px;
+
+            @include sm-desktop {
+                width: 665px;
+                margin-left: 60px;
+            }
 
             &-title {
                 @include roboto-bold;
@@ -526,8 +560,12 @@
         }
 
         &__description {
-            margin: 0 60px 60px;
+            margin: 0 110px 60px;
             line-height: 1.5;
+
+            @include sm-desktop {
+                margin: 0 60px 60px;
+            }
 
             &,
             &-block {
@@ -604,11 +642,15 @@
         }
 
         &__responses {
-            margin: 0 60px;
+            margin: 0 110px;
             padding: 40px 0 60px;
             @include bg-image('line-separator.png');
             background-position: left top;
             background-repeat: repeat-x;
+
+            @include sm-desktop {
+                margin: 0 60px;
+            }
 
             &-content {
                 @include row();
