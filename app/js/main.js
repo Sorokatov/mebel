@@ -40,6 +40,7 @@
 
             constructorButton: '.js-constructor-button',
             constructorBlock: '.js-constructor-block',
+            constructorInput: '.js-constructor-block-input',
             constructorValue: '.js-constructor-label-value',
             constructorImage: '.js-constructor-image',
             constructorImagesList: '.js-constructor-images-list',
@@ -315,13 +316,15 @@
         changeConstructorValue: function (event) {
             var $self = $(event.currentTarget),
                 $constructorBlock = $self.closest(this.SELECTORS.constructorBlock),
-                dataValue = $self.data('value') || '';
+                dataValue = $self.data('value') || '',
+                dataCharacteristicId = $self.data('characteristic-id') || '';
 
             event.preventDefault();
             $constructorBlock.find(this.SELECTORS.constructorButton)
                 .removeClass(this.CLASSES.active);
 
             $constructorBlock.find(this.SELECTORS.constructorValue).text(dataValue);
+            $constructorBlock.find(this.SELECTORS.constructorInput).val(dataCharacteristicId);
             $self.addClass(this.CLASSES.active);
         },
 
@@ -344,10 +347,12 @@
                 this.SELECTORS.constructorButton.substring(1),
                 this.SELECTORS.constructorNewImg.substring(1));
             elem.dataset.value = $self.data('value');
+            elem.dataset.characteristicId = $self.data('characteristic-id');
 
             if ($addedImg.length) $addedImg.remove();
             $imagesList.find(this.SELECTORS.constructorButton).removeClass(this.CLASSES.active);
             $imagesList.closest(this.SELECTORS.constructorBlock).find(this.SELECTORS.constructorValue).text($self.data('value'));
+            $imagesList.closest(this.SELECTORS.constructorBlock).find(this.SELECTORS.constructorInput).val($self.data('characteristic-id'));
             $imagesList.append(elem);
             this.closePopup();
         },
