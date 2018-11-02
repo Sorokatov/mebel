@@ -257,8 +257,7 @@
 
         redirectToProductWithParam: function (event) {
             event.preventDefault();
-
-            // here should be product redirect by color click
+            window.location.replace($(event.currentTarget).data('href'));
         },
 
         showSizeInput: function (event) {
