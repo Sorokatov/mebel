@@ -385,7 +385,7 @@
         }
 
         &-row {
-            @include row('', center);
+            @include row('', flex-start);
 
             & + & {
                 margin-top: 5px;
@@ -401,7 +401,16 @@
             }
 
             .radio {
+                align-items: flex-start;
                 flex-shrink: 0;
+
+                &__icon {
+                    margin-top: 1px;
+                }
+
+                &__text {
+                    max-width: 123px;
+                }
             }
 
             .dots-separator {

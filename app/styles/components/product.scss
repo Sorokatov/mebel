@@ -70,7 +70,7 @@
     }
 
     &__colors {
-        display: flex;
+        @include row('', flex-start);
         margin-bottom: 20px;
 
         &-category {
@@ -79,7 +79,7 @@
             max-width: 84px;
             min-width: 84px;
 
-            &._sm {
+            &:nth-child(2) {
                 max-width: 42px;
                 min-width: 42px;
             }

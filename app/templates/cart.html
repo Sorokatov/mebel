@@ -114,8 +114,15 @@
             <div class="cart__info-title">Оформление заказа</div>
             <div class="cart__info-phone">
                 <label class="cart__info-phone-label">Ваш телефон</label>
-                <div class="hint__wrap">
+                <div class="hint__wrap _error">
                     <input class="input js-phone-number-input" type="text">
+
+                    <div class="hint">
+                        <span class="hint__content">
+                            Вы не указали номер телефона
+                        </span>
+                        <span class="hint__arrow"></span>
+                    </div>
                 </div>
             </div>
             <div class="cart__info-delivery">
@@ -175,7 +182,7 @@
                         <label class="radio">
                             <input type="radio" name="delivery-method" class="radio__input">
                             <i class="radio__icon"></i>
-                            <span class="radio__text">На дом</span>
+                            <span class="radio__text">Доставка по городу  (Вес: 0.00kg)</span>
                         </label>
                         <span class="dots-separator _brown"></span>
                         <span class="cart__info-price">120 грн</span>
@@ -187,7 +194,7 @@
                         <label class="radio">
                             <input type="radio" name="delivery-method" class="radio__input">
                             <i class="radio__icon"></i>
-                            <span class="radio__text">Новой Почтой</span>
+                            <span class="radio__text">Самовывоз из магазина</span>
                         </label>
                         <span class="dots-separator _brown"></span>
                         <span class="cart__info-price">190 грн</span>
@@ -199,7 +206,7 @@
                         <label class="radio">
                             <input type="radio" name="delivery-method" class="radio__input">
                             <i class="radio__icon"></i>
-                            <span class="radio__text">Самовывоз</span>
+                            <span class="radio__text">Доставка с фиксированной стоимостью доставки</span>
                         </label>
                         <span class="dots-separator _brown"></span>
                         <span class="cart__info-price">Бесплатно</span>
