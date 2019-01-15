@@ -1,0 +1,76 @@
+.page-404 {
+    padding-top: 100px;
+    padding-bottom: 160px;
+
+    &__container {
+        @include row(space-between);
+        width: 1100px;
+        margin: 0 auto;
+
+        @include sm-desktop {
+            width: 960px;
+        }
+    }
+
+    &__column {
+
+        &:first-child {
+            width: 440px;
+            flex-shrink: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        @include roboto-bold;
+        font-size: 100px;
+    }
+
+    &__text {
+        line-height: 30px;
+
+        &-row {
+            margin-top: 20px;
+        }
+    }
+
+    &__link {
+        color: $orange;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__categories {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 30px;
+
+        &-item {
+            width: 145px;
+            margin-bottom: 13px;
+            color: $orange;
+            @include calibri-bold;
+            font-size: 17px;
+            text-transform: uppercase;
+            transition: $transition-time color;
+
+            &:hover {
+                color: $orange-very-dim;
+            }
+        }
+    }
+
+    &__image {
+        width: 544px;
+        height: 361px;
+        margin-top: 60px;
+        margin-right: -60px;
+        @include bg-image("table-404.png");
+
+        @include sm-desktop {
+            margin-right: -100px;
+        }
+    }
+}
