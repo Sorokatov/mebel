@@ -46,23 +46,23 @@
             background-repeat: no-repeat;
 
             &._viber {
-                @include bg-image("icons/viber-orange.png");
+                @include bg-image("icons/viber.svg");
             }
 
             &._telegram {
-                @include bg-image("icons/telegram-orange.png");
+                @include bg-image("icons/telegram.svg");
             }
 
             &._messenger {
-                @include bg-image("icons/messenger-orange.png");
+                @include bg-image("icons/messenger.svg");
             }
 
             &._whatsup {
-                @include bg-image("icons/whatsup-orange.png");
+                @include bg-image("icons/whatsapp.svg");
             }
 
             &._chat {
-                @include bg-image("icons/chat-orange.png");
+                @include bg-image("icons/chat.svg");
             }
         }
     }
