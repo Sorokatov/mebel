@@ -112,7 +112,7 @@
 
         initEventListeners: function () {
             $(document).on('click', this.SELECTORS.filterVisibilityToggle, this.toggleFiltersVisibility.bind(this));
-            $(document).on('mouseover', this.SELECTORS.categoryViewLink, this.changeCategoryViewContent.bind(this));
+            $(document).on('click', this.SELECTORS.categoryViewLink, this.changeCategoryViewContent.bind(this));
             $(document).on('click', this.SELECTORS.colorLink, this.redirectToProductWithParam.bind(this));
             $(document).on('click', this.SELECTORS.sizeLink, this.showSizeInput.bind(this));
             $(document).on('blur', this.SELECTORS.sizeInput, this.showSizeValue.bind(this));
@@ -243,6 +243,7 @@
         },
 
         changeCategoryViewContent: function (event) {
+            event.preventDefault();
             var $self = $(event.currentTarget),
                 contentAttr = $self.data('content'),
                 $contentTarget = $self.closest(this.SELECTORS.categoryViewContainer)
