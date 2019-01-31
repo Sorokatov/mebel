@@ -332,6 +332,38 @@
             &-sizes {
                 width: 175px;
 
+                .ui-menu-item {
+                    font-size: 18.5px;
+                }
+
+                .ui-selectmenu {
+
+                    &-text {
+                        border-bottom: 1px dashed $orange;
+                        @include calibri-regular;
+                        color: $orange;
+                        font-size: 18.5px;
+
+                        &:hover {
+                            border-color: transparent;
+                            color: $orange-bright;
+                        }
+                    }
+
+                    &-icon {
+                        display: none;
+                    }
+
+                    &-button {
+                        min-width: 40px;
+                        width: auto;
+                        margin-left: 10px;
+                        border: 0;
+                        padding: 0;
+                        text-align: right;
+                    }
+                }
+
                 &-row {
                     @include row(space-between, baseline);
                     background-repeat: repeat-x;
@@ -345,24 +377,6 @@
                 &-char {
                     min-width: 70px;
                 }
-
-                .link {
-                    display: inline-block;
-                    margin-left: 10px;
-                    min-width: 40px;
-                    text-align: right;
-                }
-
-                &-input {
-                    width: 40px;
-                    margin-left: 10px;
-                    margin-bottom: 1px;
-                    text-align: right;
-                    color: $orange;
-                    @include calibri-regular;
-                    font-size: 18.5px;
-                }
-
             }
         }
 

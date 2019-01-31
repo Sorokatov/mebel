@@ -38,6 +38,8 @@
             sizeValue: '.js-size-value',
             sizeInput: '.js-size-input',
 
+            sizeSelect: '.js-size-select',
+
             constructorButton: '.js-constructor-button',
             constructorBlock: '.js-constructor-block',
             constructorInput: '.js-constructor-block-input',
@@ -114,10 +116,6 @@
             $(document).on('click', this.SELECTORS.filterVisibilityToggle, this.toggleFiltersVisibility.bind(this));
             $(document).on('click', this.SELECTORS.categoryViewLink, this.changeCategoryViewContent.bind(this));
             $(document).on('click', this.SELECTORS.colorLink, this.redirectToProductWithParam.bind(this));
-            $(document).on('click', this.SELECTORS.sizeLink, this.showSizeInput.bind(this));
-            $(document).on('blur', this.SELECTORS.sizeInput, this.showSizeValue.bind(this));
-            $(document).on('keyup', this.SELECTORS.sizeInput, this.handleSizeInputKeys.bind(this));
-            $(document).on('keypress', this.SELECTORS.sizeInput, this.checkSizeInputValue.bind(this));
             $(document).on('click', this.SELECTORS.constructorButton, this.changeConstructorValue.bind(this));
             $(document).on('click', this.SELECTORS.popupClose, this.closePopup);
             $(document).on('click', this.SELECTORS.constructorImage, this.selectImageFromPopup.bind(this));
@@ -141,6 +139,12 @@
 
             $(this.SELECTORS.orderFilter).selectmenu({
                 appendTo: $(this.SELECTORS.orderFilter).parent()
+            });
+
+            $(this.SELECTORS.sizeSelect).selectmenu({
+                classes: {
+                    "ui-selectmenu-menu": "_sizes"
+                }
             });
         },
 
@@ -259,58 +263,6 @@
         redirectToProductWithParam: function (event) {
             event.preventDefault();
             window.location.replace($(event.currentTarget).data('href'));
-        },
-
-        showSizeInput: function (event) {
-            var $self = $(event.currentTarget),
-                $sizeInput = $self.next();
-
-            event.preventDefault();
-            $self.addClass(this.CLASSES.hidden);
-            $sizeInput
-                .val($self.find(this.SELECTORS.sizeValue).data('value'))
-                .removeClass(this.CLASSES.hidden)
-                .focus();
-        },
-
-        showSizeValue: function (event) {
-            event.preventDefault();
-            this.showAndUpdateSizeValue($(event.currentTarget));
-        },
-
-        handleSizeInputKeys: function (event) {
-            var $self = $(event.currentTarget);
-
-            // ESC
-            if (event.keyCode === 27) {
-                this.showAndUpdateSizeValue($self, true);
-            }
-
-            // ENTER
-            if(event.keyCode === 13) {
-                $self.blur();
-            }
-        },
-
-        showAndUpdateSizeValue: function (inputElem, shouldBeReset) {
-            var $self = inputElem,
-                value = $self.val();
-
-            if (shouldBeReset || !(/[0-9]/.test(value))) {
-                value = $self.prev().find(this.SELECTORS.sizeValue).data('value');
-            }
-
-            $self.addClass(this.CLASSES.hidden)
-                .prev().removeClass(this.CLASSES.hidden)
-                .find(this.SELECTORS.sizeValue).data('value', value).html(value)
-        },
-
-        checkSizeInputValue: function (event) {
-            var inputChar = String.fromCharCode(event.which);
-
-            if (!(/[0-9]/.test(inputChar))) {
-               event.preventDefault();
-            }
         },
 
         changeConstructorValue: function (event) {

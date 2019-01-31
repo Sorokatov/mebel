@@ -21,6 +21,10 @@
         padding: 12px 0 15px;
         background: $white;
         box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.4);
+
+        &._sizes .ui-menu {
+            width: 120px;
+        }
     }
 
     &-open {
@@ -84,6 +88,17 @@
         
         &:hover {
             color: $orange-bright;
+        }
+
+        ._sizes & {
+            display: flex;
+            font-size: 18.5px;
+
+            &:after {
+                content: 'мм';
+                display: inline-block;
+                margin-left: 4px;
+            }
         }
     }
 }
