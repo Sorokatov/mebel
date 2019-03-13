@@ -237,9 +237,11 @@
 
                 &:nth-child(2) {
                     width: 320px;
+                    margin-left: 20px;
 
                     @include sm-desktop {
                         width: 260px;
+                        margin-left: 0;
                     }
                 }
 
