@@ -226,14 +226,16 @@
                 &:first-child {
                     min-width: 265px;
                     width: 265px;
+                    padding-right: 15px;
 
                     @include sm-desktop {
                         min-width: 210px;
                         width: 210px;
+                        padding-right: 0;
                     }
                 }
 
-                &:last-child {
+                &:nth-child(2) {
                     width: 320px;
 
                     @include sm-desktop {
