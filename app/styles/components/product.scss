@@ -213,18 +213,19 @@
 
         &__constructor {
             width: 635px;
-            @include row(space-between);
+            @include row(flex-start);
             margin-bottom: 35px;
 
             @include sm-desktop {
                 width: 525px;
+                @include row(space-between);
             }
 
             &-column {
 
                 &:first-child {
-                    min-width: 295px;
-                    width: 295px;
+                    min-width: 265px;
+                    width: 265px;
 
                     @include sm-desktop {
                         min-width: 210px;
@@ -302,8 +303,8 @@
             &-button {
                 width: 40px;
                 height: 40px;
-                margin-right: 12px;
-                margin-bottom: 12px;
+                margin-right: 10px;
+                margin-bottom: 10px;
 
                 img {
                     width: 100%;

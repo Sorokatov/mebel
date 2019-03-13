@@ -57,5 +57,13 @@
         &._blue &-text {
             background-color: $slider-3;
         }
+
+        &-desc {
+
+            & ,
+            & p {
+                line-height: 23px !important;
+            }
+        }
     }
 }

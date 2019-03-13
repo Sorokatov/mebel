@@ -52,10 +52,13 @@
         }
 
         &-title {
+            position: relative;
             margin-bottom: 25px;
             @include roboto-bold;
             font-size: 48px;
             color: $skyblue;
+            background-color: $white;
+            z-index: 1;
         }
 
         &-desc {
