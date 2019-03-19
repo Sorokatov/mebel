@@ -2,8 +2,8 @@
 
     &__wrap {
         @include row('', baseline);
-        @include roboto-bold;
-        font-size: 20px;
+        @include calibri-bold;
+        font-size: 23px;
         line-height: 1;
     }
 
@@ -43,9 +43,9 @@
     &__old-value {
         position: relative;
         margin-right: 11px;
-        @include roboto-regular;
+        @include calibri-regular;
         color: $orange-dim;
-        font-size: 15px;
+        font-size: 17px;
 
         &:before {
             content: '';
