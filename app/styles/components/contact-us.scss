@@ -81,6 +81,10 @@
                 padding: 4px 10px;
                 background-color: $orange-dark;
                 color: $color-text;
+
+                .link__text {
+                    border-bottom: 0;
+                }
             }
 
             .link + .link {

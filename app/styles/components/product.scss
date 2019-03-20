@@ -543,7 +543,6 @@
 
                 &-wrap {
                     @include row();
-                    margin-bottom: 80px;
                 }
 
                 @include row();
@@ -579,7 +578,7 @@
         }
 
         &__description {
-            margin: 0 110px 60px;
+            margin: 80px 110px 60px;
             line-height: 1.5;
 
             @include sm-desktop {

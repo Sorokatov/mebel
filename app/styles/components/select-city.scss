@@ -14,7 +14,7 @@
     left: 0;
     bottom: 20px;
     width: 470px;
-    padding: 50px 60px;
+    padding: 50px 65px;
     transform: translateY(100%);
     background-color: $color-text;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
@@ -92,6 +92,10 @@
         &-wrap {
             @include row();
             margin-bottom: 10px;
+
+            .input {
+                width: 278px;
+            }
         }
 
         &-text {

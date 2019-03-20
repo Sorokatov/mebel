@@ -21,6 +21,7 @@
         padding: 12px 0 15px;
         background: $white;
         box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.4);
+        z-index: 1;
 
         &._sizes .ui-menu {
             width: 120px;
