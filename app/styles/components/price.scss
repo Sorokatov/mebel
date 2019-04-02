@@ -36,7 +36,9 @@
     }
 
     &__period {
-        font-size: 9px;
+        @include calibri-regular;
+        font-size: 16px;
+        text-transform: lowercase;
         margin-left: 4px;
     }
 

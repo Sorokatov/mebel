@@ -452,6 +452,12 @@
                     &__wrap {
                         margin-right: 12px;
                     }
+
+                    &__period {
+                        font-size: 17px;
+                        text-transform: lowercase;
+                        @include calibri-bold;
+                    }
                 }
 
                 .button {
