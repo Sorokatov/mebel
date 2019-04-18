@@ -48,3 +48,13 @@
     font-weight: 700;
     font-style: normal;
 }
+
+@font-face {
+    font-family: Calibri;
+    src: url('../fonts/Calibri-BoldItalic.eot');
+    src: url('../fonts/Calibri-BoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Calibri-BoldItalic.woff') format('woff'),
+    url('../fonts/Calibri-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}

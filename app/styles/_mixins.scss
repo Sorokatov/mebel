@@ -22,6 +22,12 @@
     font-style: normal;
 }
 
+@mixin calibri-bold-italic() {
+    font-family: Calibri;
+    font-weight: bold;
+    font-style: italic;
+}
+
 @mixin calibri-regular() {
     font-family: Calibri;
     font-weight: normal;
