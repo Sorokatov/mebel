@@ -3,6 +3,7 @@ body {
     margin: 0;
     @include calibri-light;
     font-size: 18.5px;
+    -webkit-font-smoothing: antialiased;
 }
 
 div,
